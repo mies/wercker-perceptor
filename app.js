@@ -3,7 +3,6 @@ var express = require('express')
   var path = require('path');
 
 var marked = require('marked')
-var highlight = require('highlight');
 var highlightJs = require('highlight.js');
 
 marked.setOptions({
@@ -27,7 +26,6 @@ marked.setOptions({
     }  
     return result;
   }
-
 });
 
 
@@ -40,7 +38,7 @@ var layout = fs.readFileSync(__dirname + '/views/layout.html').toString();
 //var layoutHtml = md(layout);
 var layoutHtml = layout;
 
-// register .md as an engine in express view system
+
 
 app.engine('md', function(path, options, fn){
   console.log(path)
@@ -53,7 +51,6 @@ app.engine('md', function(path, options, fn){
   fs.readFile(path, 'utf8', function(err, str){
     if (err) return fn(err);
     try {
-      //var html = md(str);
       var html = marked(str);
       
       //html = html.replace(/\{\{([^}]+)\}\}/g, function(_, name){
@@ -79,12 +76,6 @@ app.get('/', function(req, res){
 
 app.get('/articles/:article', function(req, res){ 
   res.render(req.params.article, { title: 'Markdown Example', layout : true });
-})
-
-
-
-app.get('/fail', function(req, res){
-  res.render('missing', { title: 'Markdown Example' });
 })
 
 if (!module.parent) {
