@@ -1,0 +1,15 @@
+{
+    "name": "wercker-perceptor",
+    "version": "0.0.1",
+    "dependencies": {
+        "express": "3", 
+        "async": "0.1.15",
+        "underscore": "1.3.1" ,
+        "jade": "*",
+        "node-markdown" : "*",
+        "marked" : "*",
+        "highlight" : "*",
+        "highlight.js" : "*"
+    } 
+}
+

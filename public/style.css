@@ -1,0 +1,40 @@
+a {
+  color: #cc6685;
+}
+
+.nav-list > .active > a,
+.nav-list > .active > a:hover {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-color: #CC6685;
+}
+.btn-primary {
+  background-color: #cc6685;
+  *background-color: #cc6685;
+  background-image: -ms-linear-gradient(top, #c93a62, #cc6685);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#c93a62), to(#cc6685));
+  background-image: -webkit-linear-gradient(top, #c93a62, #cc6685);
+  background-image: -o-linear-gradient(top, #c93a62, #cc6685);
+  background-image: -moz-linear-gradient(top, #c93a62, #cc6685);
+  background-image: linear-gradient(top, #c93a62, #cc6685);
+  background-repeat: repeat-x;
+  border-color: #cc6685 #cc6685 #003580;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#c93a62', endColorstr='#cc6685', GradientType=0);
+  filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary.active,
+.btn-primary.disabled,
+.btn-primary[disabled] {
+  background-color: #cc6685;
+  *background-color: #cc6685;
+}
+
+.btn-primary:active,
+.btn-primary.active {
+  background-color: #cc6685 \9;
+}
+
