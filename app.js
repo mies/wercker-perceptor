@@ -41,7 +41,6 @@ var layoutHtml = layout;
 
 
 app.engine('md', function(path, options, fn){
-  console.log(path)
   
   //if(cache[path]){
   //  console.log('cache hit');
@@ -79,6 +78,6 @@ app.get('/articles/:article', function(req, res){
 })
 
 if (!module.parent) {
-  app.listen(4000);
-  console.log('Express started on port 4000');
+  app.listen(process.env.PORT || 4000);
+  console.log('Express started on port ' + process.env.PORT || 4000);
 }
