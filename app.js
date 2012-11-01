@@ -5,6 +5,18 @@ var express = require('express')
 var marked = require('marked')
 var highlightJs = require('highlight.js');
 
+
+process.on('uncaughtException', function(err) {
+  'use strict';
+  var error = err;
+  if(err && err.stack){
+    error = {error : err.stack};
+  }
+  log.error('uncaughtException', error);
+});
+
+
+
 marked.setOptions({
   gfm: true,
   pedantic: false,
