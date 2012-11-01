@@ -41,11 +41,12 @@ var layoutHtml = layout;
 
 
 app.engine('md', function(path, options, fn){
+  console.log('parse ' + path);
   
-  //if(cache[path]){
-  //  console.log('cache hit');
-  //  return fn(null,cache[path]);
-  //} 
+  if(cache[path]){
+    console.log('cache hit');
+    return fn(null,cache[path]);
+  } 
 
   fs.readFile(path, 'utf8', function(err, str){
     if (err) return fn(err);
@@ -56,7 +57,7 @@ app.engine('md', function(path, options, fn){
       //  return options[name] || '';
       //})
       html = layoutHtml.replace('{{content}}', html);
-      //cache[path] = layoutHtml;
+      cache[path] = html;
       fn(null, html);
     } catch(err) {
       fn(err);
@@ -70,10 +71,12 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'md');
 
 app.get('/', function(req, res){
+  console.log('index');
   res.render('index', { title: 'Markdown Example', layout : true });
 })
 
-app.get('/articles/:article', function(req, res){ 
+app.get('/articles/:article', function(req, res){
+  console.log('article', req.params.article);
   res.render(req.params.article, { title: 'Markdown Example', layout : true });
 })
 
