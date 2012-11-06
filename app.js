@@ -91,13 +91,11 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'md');
 
 app.get('/', function(req, res){
-  console.log('index');
-  res.render('index', { title: 'Markdown Example', layout : true });
+  res.render('index');
 })
 
 app.get('/articles/:article', function(req, res){
-  console.log('article', req.params.article);
-  res.render(req.params.article, { title: 'Markdown Example', layout : true });
+  res.render(req.params.article);
 })
 
 if (!module.parent) {
