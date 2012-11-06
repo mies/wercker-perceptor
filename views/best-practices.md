@@ -1,7 +1,9 @@
 # Best practices
 
+<a id="deployment"></a>
 ## Deployment
 
+<a id="deployment-staging-production"></a>
 ### Staging/production
 
 A common pattern to use is having two different environments: staging and production.
