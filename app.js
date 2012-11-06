@@ -15,6 +15,11 @@ process.on('uncaughtException', function(err) {
   log.error('uncaughtException', error);
 });
 
+var cachePages = false;
+
+if(!process.env){
+  cachePages = true;
+}
 
 
 marked.setOptions({
@@ -50,15 +55,16 @@ var layout = fs.readFileSync(__dirname + '/views/layout.html').toString();
 //var layoutHtml = md(layout);
 var layoutHtml = layout;
 
-
-
 app.engine('md', function(path, options, fn){
   console.log('parse ' + path);
   
-  if(cache[path]){
+  if(cachePages && cache[path]){
     console.log('cache hit');
     return fn(null,cache[path]);
-  } 
+  }
+  if(!cachePages){
+    layoutHtml = fs.readFileSync(__dirname + '/views/layout.html').toString();
+  }
 
   fs.readFile(path, 'utf8', function(err, str){
     if (err) return fn(err);
@@ -69,7 +75,9 @@ app.engine('md', function(path, options, fn){
       //  return options[name] || '';
       //})
       html = layoutHtml.replace('{{content}}', html);
-      cache[path] = html;
+      if(cachePages){
+        cache[path] = html;
+      }
       fn(null, html);
     } catch(err) {
       fn(err);
@@ -94,5 +102,5 @@ app.get('/articles/:article', function(req, res){
 
 if (!module.parent) {
   app.listen(process.env.PORT || 4000);
-  console.log('Express started on port ' + process.env.PORT || 4000);
+  console.log('Express started on port ' + (process.env.PORT || 4000));
 }
