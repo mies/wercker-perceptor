@@ -1,9 +1,9 @@
 <!doctype html>
 <html>
   <head>
-    
+
     <title>Wercker Devcenter - Main</title>
-    
+
     <link rel="stylesheet" href="/public/bootstrap.min.css"></link>
     <link rel="stylesheet" href="/public/style.css"></link>
     <link rel="stylesheet" href="/public/highlight.css"></link>
@@ -41,40 +41,60 @@
       <div class="row-fluid">
 
         <div class="span2">
-          <div class="well sidebar-nav">            
-            <ul class="nav nav-list">  
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
   <li class="nav-header">Getting Started</li>
-  <li><a href="/articles/introduction-wercker">Introduction to Wercker</a></li>  
+  <li><a href="/articles/introduction-wercker">Introduction to Wercker</a></li>
   <li class=""><a href="/articles/werckerjson">wercker.json</a></li>
   <li class=""><a href="/articles/concepts">Concepts</a></li>
   <li class=""><a href="/articles/best-practices">Best practices</a></li>
   <li class="nav-header">Language Support</li>
   <li class=""><a href="/articles/python">Python</a></li>
-  <li class=""><a href="/articles/ruby">Ruby</a></li>  
-  <li class=""><a href="/articles/nodejs">Node.js</a></li>    
-  <li class="nav-header">Services</li>  
+  <li class=""><a href="/articles/ruby">Ruby</a></li>
+  <li class=""><a href="/articles/nodejs">Node.js</a></li>
+  <li class="nav-header">Services</li>
   <li class=""><a href="/articles/available-services">Available Services</a></li>
   <li class="nav-header">Deployment</li>
-</ul>           
+</ul>
 </div><!--/.well -->
 </div><!--/span-->
 <div class="span10">
 
-          
+
         {{content}}
 
-        </div>
+      </br>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'werckerdevcenter'; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
       </div>
+
+        </div>
+
 
       <hr>
 
+
+
       <div id="footer">
-        
+
         &copy; Copyright 2012 by <a href="http://wercker.com/">Wercker</a>.
-        
+
       </div>
 
     </div>
-     
+
   </body>
 </html>
