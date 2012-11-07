@@ -45,3 +45,6 @@ These are the services which are supported by Wercker. The list also includes th
 * rabbitmq port = 5672 (default)
 
 * redis version 2.4.14 port = 6379 (default)
+```
+    Host: WERCKER_REDIS_HOST
+```
