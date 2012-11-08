@@ -84,7 +84,7 @@ We are going to deploy our simple API to Heroku, which expects a Procfile that d
 	:::bash
 	web: python app.py
 
-From the Wercker dashboard select the deployment tag and create a Heroku deploy target by adding your Heroku API key.from your [account page on Heroku](https://dashboard.heroku.com/account)
+From the Wercker dashboard select the deployment tab and create a Heroku deploy target by adding your Heroku API key.from your [account page on Heroku](https://dashboard.heroku.com/account)
 
 ## Push your code to GitHub
 
@@ -98,4 +98,4 @@ As you have previously added this repository to Wercker, your push gets automati
 ## Deploy your application to Heroku
 
 If all went well you now have a green build, which is ready to be deployed to Heroku.
-Select your build and hit the deploy button
+Select your build and hit the deploy button. Your Python Flask API is now live.
