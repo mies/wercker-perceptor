@@ -42,9 +42,14 @@ These are the services which are supported by Wercker. The list also includes th
       Port: WERCKER_MONGODB_PORT
 ```
 
-* rabbitmq port = 5672 (default)
+* rabbitmq
+```
+      Host: WERCKER_RABBITMQ_HOST
+      Port: WERCKER_RABBITMQ_PORT
+```
 
-* redis version 2.4.14 port = 6379 (default)
+* redis version 2.4.14
 ```
     Host: WERCKER_REDIS_HOST
+    Port: WERCKER_REDIS_PORT
 ```
