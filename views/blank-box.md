@@ -12,16 +12,17 @@ First create a repository on [Go](http://github.com) and add it to Wercker. When
 ## Create a Wercker.json file
 The `wercker.json` file is a powerful way of specifying your development environment requirements. Check out the devcenter [article](/articles/wercker-json) to get up to speed on the topic. For this project we will be using the `customSteps` and `preInstallScripts` declaration to set up our custom box.
 
-** wercker.json
+**wercker.json**
 
-    :::javascript
-      {
-    "preInstallScripts" : [
-      "mkdir -p $HOME/go/src",
-      "export GOPATH=$HOME/go",
-      "sudo DEBIAN_FRONTEND=noninteractive apt-get -y install golang"
-    ]
-    }
+``` javascript
+{
+  "preInstallScripts" : [
+  "mkdir -p $HOME/go/src",
+  "export GOPATH=$HOME/go",
+  "sudo DEBIAN_FRONTEND=noninteractive apt-get -y install golang"
+  ]
+}
+```
 
 Here we tell Wercker to install the golang package and export our `$GOPATH` environment variable. We use a noninteractive mode so the install does not hang at a menu that pops up.
 
@@ -31,47 +32,50 @@ If we commit and push our `wercker.json` file to GitHub, Wercker picks up our ch
 
 We will now create a simple Go program and a unit test to go along with it.
 
-** intlib.go
+**intlib.go**
 
-    :::go
-    package intpkg
+``` go
+package intpkg
 
-    func Add2Ints(i, j int) int {
-        return i + j
-    }
+func Add2Ints(i, j int) int {
+    return i + j
+}
+```
 
-** intlib_test.go
+**intlib_test.go**
 
-    :::go
-    package intpkg
+``` go
+package intpkg
 
-    import (
-        "testing"
-        )
+import (
+    "testing"
+    )
 
-    func Test_Add2Ints(t *testing.T) {
-        t.Error("Hardcoded error")
-    }
+func Test_Add2Ints(t *testing.T) {
+    t.Error("Hardcoded error")
+}
+```
 
 
 ## Update our wercker.json file
 
 We are now ready to add a custom build step to our `wercker.json` file so we can run the unit test. Our wercker.json file now looks like:
 
-    :::javascript
-    {
-    "customSteps": {
-      "go_unit_test" : {
-          "commands" : [
-              "go test"
-              ]
-      }
-    },
-    "preInstallScripts" : [
-      "mkdir -p $HOME/go/src",
-      "export GOPATH=$HOME/go",
-      "sudo DEBIAN_FRONTEND=noninteractive apt-get -y install golang"
-    ]
-    }
+``` javascript
+{
+"customSteps": {
+  "go_unit_test" : {
+      "commands" : [
+          "go test"
+          ]
+  }
+},
+"preInstallScripts" : [
+  "mkdir -p $HOME/go/src",
+  "export GOPATH=$HOME/go",
+  "sudo DEBIAN_FRONTEND=noninteractive apt-get -y install golang"
+  ]
+}
+```
 
 Push your changes to Github and see our unit test fail.

@@ -4,12 +4,13 @@ You can find the code for this tutorial on [Github](https://github.com/mies/werc
 
 ### Table of Contents
 * Prerequisites
-* Add project to Wercker
+* Set up virtualenv
 * Declare dependencies through `requirements.txt`
+* Add project to Wercker
 * Write the API
 * Create a test folder and add a unit test
-* Push your changes to Github
 * Create a Procfile and Heroku deploy target
+* Push your changes to Github
 * Deploy to Heroku
 
 ## Prerequisites
@@ -48,7 +49,7 @@ Add your GitHub project to Wercker using the Wercker dashboard
 
 Create a simple Flask API
 
-** app.py
+**app.py**
 
     :::python
 
