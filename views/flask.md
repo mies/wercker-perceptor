@@ -8,7 +8,8 @@ You can find the code for this tutorial on [Github](https://github.com/mies/werc
 * Declare dependencies through `requirements.txt`
 * Add project to Wercker
 * Write the API
-* Create a test folder and add a unit test
+* Create a simple unit test
+* Create a wercker.json file
 * Create a Procfile and Heroku deploy target
 * Push your changes to Github
 * Deploy to Heroku
@@ -23,22 +24,24 @@ You can find the code for this tutorial on [Github](https://github.com/mies/werc
 
 Within your project folder:
 
-	:::bash
+``` bash
 	$ virtualenv venv --distribute
 	New python executable in venv/bin/python
 	Installing distribute...............done.
 	Installing pip...............done.
+```
 
 And now activate your newly created environment:
 
-	:::bash
+``` bash
 	$ source venv/bin/activate
-
+```
 ## Declare dependencies in a `requirements.txt` file
 
-	:::bash
+``` bash
 	$ pip install flask
 	$ pip freeze > requirements.txt
+```
 
 ## Add project to Wercker
 Add your GitHub project to Wercker using the Wercker dashboard
@@ -51,7 +54,7 @@ Create a simple Flask API
 
 **app.py**
 
-    :::python
+```python
 
 	import os
 	from flask import Flask
@@ -74,25 +77,79 @@ Create a simple Flask API
 	  port = int(os.environ.get('PORT', 5000))
 	  app.debug = True
 	  app.run(host='0.0.0.0', port=port)
+```
 
+## Create a simple Unit Test
+
+We're now ready to write a simple unit test for our API. We're going to leverage Python's `unittest` module for our testcase and check if the HTTP response code is a `200, OK` and if the json served by the API is the json data that we are expecting.
+
+**app_test.py**
+
+``` python
+from app import app
+
+import unittest
+import json
+
+class StunticonTestCase(unittest.TestCase):
+
+  def test_index(self):
+    tester = app.test_client(self)
+    response = tester.get('/stunticons.json', content_type='application/json')
+    self.assertEqual(response.status_code, 200)
+    self.assertEqual(response.data, json.dumps(["Motormaster", "Dead End", "Breakdown", "Wildrider", "Drag Strip"]))
+
+if __name__ == '__main__':
+    unittest.main()
+```
+
+## Create a wercker.json file
+
+Now that we have our unit test we need to let Wercker know it should run it, we do this through a `wercker.json` file within out project folder.
+
+**werkcer.json**
+
+``` javascript
+{
+  "customSteps" : {
+    "setup_environment" : {
+      "commands": [
+        "export LANG=en_US.UTF-8",
+        "export LC_ALL=en_US.UTF-8",
+        "export WERCKER=true",
+        "export VIRTUALENV_DISTRIBUTE=true"
+      ]
+    },
+    "flask_test" : {
+      "commands" : [
+      "python app_test.py"
+      ]
+    }
+  }
+}
+```
+
+Here you ca see we added a custom step called `flask_test` that will run `python app_test.py` as a separate buildstep.
 
 ## Create a Procfile and Heroku deploy target
 
 We are going to deploy our simple API to Heroku, which expects a Procfile that defines our process types:
 
-** Procfile
+**Procfile**
 
-	:::bash
+``` bash
 	web: python app.py
+```
 
 From the Wercker dashboard select the deployment tab and create a Heroku deploy target by adding your Heroku API key.from your [account page on Heroku](https://dashboard.heroku.com/account)
 
 ## Push your code to GitHub
 
-	:::bash
+``` bash
 	git add .
 	git commit -m 'init'
 	git push origin master
+```
 
 As you have previously added this repository to Wercker, your push gets automatically picked up and triggers a build.
 
