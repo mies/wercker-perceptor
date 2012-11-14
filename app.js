@@ -1,8 +1,7 @@
-var express = require('express')
-  , fs = require('fs');
-  var path = require('path');
-
-var marked = require('marked')
+var express = require('express');
+var fs = require('fs');
+var path = require('path');
+var marked = require('marked');
 var highlightJs = require('highlight.js');
 
 
@@ -12,7 +11,7 @@ process.on('uncaughtException', function(err) {
   if(err && err.stack){
     error = {error : err.stack};
   }
-  log.error('uncaughtException', error);
+  console.error('uncaughtException', error);
 });
 
 var cachePages = false;
@@ -27,11 +26,12 @@ marked.setOptions({
   pedantic: false,
   sanitize: false,
   highlight:  function(code, lang) {
+  'use strict';
 
   var result = code;
     try{
       if(!lang){
-        result = highlightJs.highlightAuto(code).value;  
+        result = highlightJs.highlightAuto(code).value;
       }
       else{
         result =  highlightJs.highlight(lang, code).value;
@@ -40,7 +40,7 @@ marked.setOptions({
     catch(error){
       console.error(error);
       result =  'Coulde not parse this block with language ' + lang + '<br/>' + code;
-    }  
+    }
     return result;
   }
 });
@@ -56,6 +56,7 @@ var layout = fs.readFileSync(__dirname + '/views/layout.html').toString();
 var layoutHtml = layout;
 
 app.engine('md', function(path, options, fn){
+  'use strict';
   console.log('parse ' + path);
   
   if(cachePages && cache[path]){
@@ -67,7 +68,9 @@ app.engine('md', function(path, options, fn){
   }
 
   fs.readFile(path, 'utf8', function(err, str){
-    if (err) return fn(err);
+    if (err){
+      return fn(err);
+    }
     try {
       var html = marked(str);
       
@@ -83,7 +86,7 @@ app.engine('md', function(path, options, fn){
       fn(err);
     }
   });
-})
+});
 
 app.set('views', __dirname + '/views');
 
@@ -91,12 +94,14 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'md');
 
 app.get('/', function(req, res){
+  'use strict';
   res.render('index');
-})
+});
 
 app.get('/articles/:article', function(req, res){
+  'use strict';
   res.render(req.params.article);
-})
+});
 
 if (!module.parent) {
   app.listen(process.env.PORT || 4000);

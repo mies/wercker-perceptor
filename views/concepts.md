@@ -1,6 +1,7 @@
 # Wercker concepts
 
 <a id="builds"></a>
+
 ## Builds
 
 Every time a push to git is done, Wercker pulls this commit. Wercker compiles, tests and packages the code.
@@ -11,11 +12,13 @@ each seperate push leads to one Build.
 In the project overview there is a list of the latest builds.
 
 <a id="collaborators"></a>
+
 ## Collaborators
 
 *Under construction*
 
 <a id="deploy-targets"></a>
+
 ## Deploy targets
 
 To deploy code, a deploy target needs to be created. There are two types: Heroku and Custom.
@@ -35,12 +38,28 @@ It's possible to set environment variables that can be used in your custom deplo
 ```
 
 <a id="deploys"></a>
+
 ## Deploys
 
 When a [Build](#builds) is passed, it can be deployed to a [Deploy Target](#deploy-targets).
 This can be done from the [Build](#builds) overview
 
+<a id="google-chrome-extension"></a>
+
+## Google Chrome extension
+
+You can get real-time notifications of what is happining with your projects, using 
+<a href="https://chrome.google.com/webstore/detail/wercker-build-notificatio/hdbipaohmcaebblpcioidpgkeijnikch" target="_blank">the Wercker Google Chrome extension</a>.
+You will get notified when the following events occur:
+
+*   [Build](#builds) failed
+*   [Deploy](#deploys) passed or failed
+*   Provisioning passed or failed
+
+You can find <a href="https://chrome.google.com/webstore/detail/wercker-build-notificatio/hdbipaohmcaebblpcioidpgkeijnikch" target="_blank">the extension</a> in the Chrome web store.
+
 <a id="tests"></a>
+
 ## Tests
 
 During a [Build](#builds) tests can be run. By default Wercker tries to run the tests. For example in a Node.js environment
