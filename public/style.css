@@ -1,3 +1,12 @@
+ body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+
+
 a {
   color: #cc6685;
 }
@@ -36,5 +45,25 @@ a {
 .btn-primary:active,
 .btn-primary.active {
   background-color: #cc6685 \9;
+}
+
+.diagram table,td {
+}
+
+.diagram {
+
+  width: 1000px;
+border-collapse: separate;
+margin: 20px;
+border:black thick solid;
+border-spacing: 10px;
+ table-layout: fixed;
+
+}
+.diagram th,td {
+padding:10px;
+border:black thin solid;
+    text-align: center;
+    vertical-align: middle;
 }
 
