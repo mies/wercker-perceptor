@@ -40,6 +40,17 @@ Click "Provision new host" in the form to provision a new host.
 
 A sandbox is created to run the scripts. This sandbox has the same specifications as the sandbox that was used to create the build.
 
+The following environment variables are set:
+
+```
+WERCKER=true
+PROVISION=true
+WERCKER_ROOT=/build/X
+WERCKER_PLATFORM_VERSION=X.X.X
+PROVISION_HOST=host
+PROVISION_SSH_KEY=key (hidden from log)
+```
+
 ## Pre-provision
 
 During pre-provision you can run scripts needed to run before the actual provisioning.

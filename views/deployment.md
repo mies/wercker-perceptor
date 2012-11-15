@@ -60,6 +60,24 @@ For Custom this sandbox has the same specifications as the sandbox that was used
 
 For Heroku a Heruko sandbox is created.
 
+The following environment variables are set:
+
+```
+WERCKER=true
+DEPLOY=true
+WERCKER_ROOT=/build/X
+WERCKER_PLATFORM_VERSION=X.X.X
+WERCKER_POSTDEPLOY_WARMUP_SECONDS=30
+```
+
+**Heroku only**
+
+```
+HEROKU_USER=username
+HEROKU_KEY=apikey (hidden from log)
+HEROKU_APP_NAME=appname
+```
+
 ## Setup
 
 **Heroku only**
