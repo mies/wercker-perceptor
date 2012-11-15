@@ -11,6 +11,8 @@ each seperate push leads to one Build.
 
 In the project overview there is a list of the latest builds.
 
+More information: [Build](build)
+
 <a id="collaborators"></a>
 
 ## Collaborators
@@ -29,13 +31,16 @@ Custom deploy code can be specified in [wercker.json](werckerjson)
 
 It's possible to set environment variables that can be used in your custom deploy code.
 
-``` javascript  
+``` javascript
   "preDeploy" : ["echo my-pre-deploy-script.sh"]
-  
+
   "deploy" : ["echo my-deploy-script.sh"]
-  
+
   "postDeploy" : ["echo my-post-deploy-script.sh"]
 ```
+
+More information: [Deployment](deployment)
+
 
 <a id="deploys"></a>
 
@@ -44,11 +49,13 @@ It's possible to set environment variables that can be used in your custom deplo
 When a [Build](#builds) is passed, it can be deployed to a [Deploy Target](#deploy-targets).
 This can be done from the [Build](#builds) overview
 
+More information: [Deployment](deployment)
+
 <a id="google-chrome-extension"></a>
 
 ## Google Chrome extension
 
-You can get real-time notifications of what is happining with your projects, using 
+You can get real-time notifications of what is happining with your projects, using
 <a href="https://chrome.google.com/webstore/detail/wercker-build-notificatio/hdbipaohmcaebblpcioidpgkeijnikch" target="_blank">the Wercker Google Chrome extension</a>.
 You will get notified when the following events occur:
 
@@ -57,6 +64,15 @@ You will get notified when the following events occur:
 *   Provisioning passed or failed
 
 You can find <a href="https://chrome.google.com/webstore/detail/wercker-build-notificatio/hdbipaohmcaebblpcioidpgkeijnikch" target="_blank">the extension</a> in the Chrome web store.
+
+<a id="provisioning"></a>
+
+## Provisioning
+
+Before deploying a [Build](#builds) to a [Deploy Target](#deploy-targets), you first have to create this environment. This process is called provisioning.
+
+More information: [Provisioning](provisioning)
+
 
 <a id="tests"></a>
 
