@@ -1,6 +1,6 @@
 # Available Services
 
-Most applications use a database to store data or a message queue to handle jobs asynchronously. With Wercker you can specify which services you require and Wercker will provision them for you. 
+Most applications use a database to store data or a message queue to handle jobs asynchronously. With Wercker you can specify which services you require and Wercker will provision them for you.
 
 This is done by specifying the required services in your `wercker.json` file. Through environment variables you will then be able to access these services.
 
@@ -21,7 +21,7 @@ To be able to use services you must first specify them in the service property i
 These are the services which are supported by Wercker. The list also includes the environment variables needed to access the service. It is important that you use these environment variables, since the login information might change.
 
 * mysql
-```  
+```
     Host: WERCKER_MYSQL_HOST
     Port: WERCKER_MYSQL_PORT
     Username: WERCKER_MYSQL_USERNAME
@@ -35,7 +35,7 @@ These are the services which are supported by Wercker. The list also includes th
     Username: WERCKER_POSTGRESQL_USERNAME
     Password: WERCKER_POSTGRESQL_PASSWORD
 ```
-  
+
 * mongodb
 ```
       Host: WERCKER_MONGODB_HOST
@@ -53,3 +53,7 @@ These are the services which are supported by Wercker. The list also includes th
     Host: WERCKER_REDIS_HOST
     Port: WERCKER_REDIS_PORT
 ```
+
+More information on language and services:
+
+* [Getting Started with Node.js and Redis](/articles/nodejs-redis/)
