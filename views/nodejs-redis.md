@@ -5,6 +5,7 @@
 * Introducing Redis
 * Add project to Wercker
 * Write a test
+* Add a wercker.json file
 * Push your code
 * TODO: Deploy
 
@@ -45,6 +46,20 @@ describe("Decepticons", function() {
     done();
     });
   });
+}
+```
+
+## Create a wercker.json file
+
+Now we're ready to create our `wercker.json` file to specify that we want to use Redis for our code:
+
+**wercker.json**
+
+``` javascript
+{
+  "services" : {
+  "redis" : true
+  }
 }
 ```
 
