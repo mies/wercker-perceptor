@@ -8,7 +8,7 @@ In [wercker.json](werckerjson) you can specify which scripts need to be run.
 
 You have to create these scripts yourself. What kind of scripts are up to you: you can use bash scripts, Chef, Puppet, anything.
 
-The best practice is to create a folder named <code>provision</code> in the root of your project and put everything related to provisioning in the folder.
+The best practice is to create a folder named <code>provision</code> in the root of your project and put everything related to provisioning in this folder.
 
 
 <table class="diagram">

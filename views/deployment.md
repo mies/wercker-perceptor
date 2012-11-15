@@ -1,70 +1,170 @@
 # Deployment
 
-One of the main mottos of DevOps is that you automate everything.
+The main benefit of using Wercker is that you can Deploy Continuously.
 
-So when a new environment is created, this should be done automated.
+Wercker support deploying to Heroku and to your own servers (Custom).
 
 In [wercker.json](werckerjson) you can specify which scripts need to be run.
 
-You have to create these scripts yourself. What kind of scripts are up to you: you can use bash scripts, Chef, Puppet, anything.
-
-The best practice is to create a folder named <code>provision</code> in the root of your project and put everything related to provisioning in the folder.
-
-
-
-@stepArrays = ['platformSteps', 'configPreInstallSteps','dependencySteps', 'configPreTestSteps', 'testSteps',
-    'configCustomSteps', 'configPostTestSteps', 'deploySetupSteps', 'deployPreDeploy','deployPreDeployCustom',
-    'deploy', 'deployCustom', 'deployPostDeployCustom', 'deployPostDeploy', 'deployPostDeployTest', 'preProvision',
-    'provision', 'postProvision']
-
+For Custom the best practice is to create a folder named <code>deploy</code> in the root of your project and put everything related to deployment in this folder.
 
 <table class="diagram">
   <tr>
-    <td>Create and run</td>
-    <td>Pre-provision</td>
-    <td>Provision</td>
-    <td>Post-provision</td>
+    <td>Create deploy target</td>
+    <td>Create build</td>
+    <td>Start</td>
+    <td>Create environment</td>
+    <td>Setup</td>
+    <td>Pre-deploy</td>
+    <td>Pre-deploy custom</td>
+    <td>Deploy</td>
+    <td>Post-deploy custom</td>
+    <td>Post-deploy</td>
+    <td>Post-deploy test</td>
     <td>Report</td>
+    <td>Post-deploy log test</td>
+    <td>Post-deploy metrics test</td>
   </tr>
 </table>
 
-## Create and run
 
-If administrator, you can go to the provisioning tab of a project
-Click "Provision new host" to start provisiong a new host.
+## Create deploy target
 
-* Host: the IP address or domain name of the host
-* SSH key: the SSH key used to login to the host
-* Build: the build containing the provision script to be used
-* Environment variables: additional variables needed by the provision script
+To specify where to deploy to, create a deploy target in the deployment tab of a project.
 
-Only the log will be saved, so your SSH key won't be stored anywhere on Wercker.
+There are two types: Heroku and Custom.
 
-Click "Provision new host" in the form to provision a new host.
+Heroku is used to deploy to Heroku, and Custom can be used to deploy to your own servers (Amazon, Rackspace, etc)
 
-## Pre-provision
+Environment variables needed during deployment can be set by the administrator.
 
-During pre-provision you can run scripts needed to run before the actual provisioning.
+## Create build
 
-The script or scripts in [wercker.json](werckerjson) in <code>preProvision</code> are run.
+Before deploying, a build needs be to be created and passes all tests.
 
-## Provision
+More information: [Build](build)
 
-During provision the script(s) needed to do the actual provisioning are run.
+## Start
 
-The script or scripts in [wercker.json](werckerjson) in <code>provision</code> are run.
+When ready to deploy, go to the build in Wercker, click Deploy and choose your Deploy Target.
+
+It is also possible to automatically start a deploy by adding #*deploytargetname* in your commit message.
+
+Only successful builds will be deployed.
+
+## Create environment
+
+A sandbox is created for the deployment.
+
+For Custom this sandbox has the same specifications as the sandbox that was used to create the build.
+
+For Heroku a Heruko sandbox is created.
+
+## Setup
+
+**Heroku only**
+
+A test is done if your API key still is valid and a ssh-key is generated to communicate with Heroku.
+
+## Pre-deploy
+
+**Heroku only**
+
+Maintance mode is set to true (<code>heroku maintenance:on</code>).
+
+## Pre-deploy custom
+
+During pre-deploy you can run scripts needed to run before the deployment itself.
+
+For Heroku, these script are run on the server of Heroku (<code>heroku run</code>)
+
+The script or scripts in [wercker.json](werckerjson) in <code>preDeploy</code> are run.
+
+## Deploy
+
+During deploy the script(s) needed to do the actual deployment are run.
+
+### Heroku
+
+The code is pushed to Heroku: <code>git push -f git@heroku.com:$HEROKU_APP_NAME.git master</code>.
+
+### Custom
+
+The script or scripts in [wercker.json](werckerjson) in <code>deploy</code> are run.
+
+## Post-deploy custom
+
+During post-deploy you can run scripts needed to run after the deployment itself.
+
+For Heroku, these script are run on the server of Heroku (<code>heroku run</code>)
+
+The script or scripts in [wercker.json](werckerjson) in <code>postDeploy</code> are run.
 
 
-## Post-provision
+## Post-deploy
 
-During post-provision you can run scripts needed to run after the provisioning is successful.
+**Heroku only**
 
-For example when a new webserver is added, the loadbalancer can be notified.
+The process is restarted and maintance mode is set to false (<code>heroku ps:restart</code> <code>heroku maintenance:off</code>).
 
-The script or scripts in [wercker.json](werckerjson) in <code>postProvision</code> are run.
+## Post-deploy test
+
+During post-deploy test you can run scripts needed to verify if the deployment was successful.
+
+For example you can try to download the homepage and check if a word exists on the page.
+
+```
+  "postDeployTest" : ["curl $URL| grep welcome"]
+```
+
+
+The script or scripts in [wercker.json](werckerjson) in <code>postDeployTest</code> are run.
 
 ## Report
 
 After the provisioning ends, the log can be retrieved in the provisioning tab of the project.
 
 When using [the Google Chrome extension](concepts#google-chrome-extension) a notification is shown whether is passed or failed.
+
+
+## Post-deploy log test
+
+It is possible to check the logs to verify if the new version is running without any problems.
+
+This is done a few minutes after deploying, so there is some time to fill the logs.
+
+Wercker currently supports <a href="http://loggly.com/" target="_blank">Loggly</a> as source to query.
+
+To use Loggly, two steps need to be taken by the administrator.
+
+* In the Admin tab of the project a connection should be made with Loggly
+* In the Deploy Target the Loggly domain and the query that retrieves errors should be specified.
+
+The query can be <code>inputname:app json.application:wercker-sentinel json.level:error</code> for example.
+
+For more information, see the <a href="http://www.loggly.com/support/using-data/search-basics/" target="_blank">Loggly documentation</a>.
+
+**Heroku**
+
+The Heroku logs are also checked to see if an error has occurred.
+
+
+<a id="post-deploy-metrics-test"></a>
+
+## Post-deploy metrics test
+
+It is possible to check if certain metrics are off after deploying.
+
+This is done a few minutes after deploying, so there is some time to collect some metrics.
+
+The most simple implementation is a heartbeat. Every 30 seconds a heartbeat is send.
+If after deploying the heartbeat stops, it's clear something is wrong.
+
+[Heartbeat implementation in Node.js](graphite-hearbeat-nodejs)
+
+Wercker uses <a href="http://graphite.wikidot.com//" target="_blank">Graphite</a> to collect the metrics.
+
+In the deployment tab, you can find the servername of the Graphite server. You also need the metrics key, to identify which Deploy Target is sending metrics.
+
+For more information about Graphite, see the <a href="http://graphite.readthedocs.org/" target="_blank">Graphite documentation</a>.
+
