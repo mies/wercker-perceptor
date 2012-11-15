@@ -1,4 +1,4 @@
-# Getting stated with Rails and Mongodb on Wercker
+# Getting stated with Rails and MongoDB on Wercker
 You can find the code for this tutorial on [Github](https://github.com/mies/mongodb-demo)
 
 ### Table of Contents
