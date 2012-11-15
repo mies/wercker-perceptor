@@ -3,6 +3,7 @@
 ### Table of Contents
 * Prerequisites
 * Introducing Redis
+* Specify dependencies through package.json
 * Add project to Wercker
 * Write a test
 * Add a wercker.json file
@@ -18,6 +19,31 @@ Redis is an open-source key-value store that can contain data structures such as
 
 ## Add project to Wercker
 Add your GitHub project to Wercker
+
+## Specify dependencies through package.json
+
+We declare our dependencies through a `package.json` file:
+
+**package.json**
+
+``` javascript
+{
+    "name": "wercker-redis-node",
+    "version" : "0.0.1",
+    "dependencies" : {
+        "should" : "1.2.1",
+        "mocha" : "1.6.0",
+        "redis" : "0.8.2"
+    },
+    "engines" : {
+        "node" : "0.8.x",
+        "npm" : "1.1.x"
+    },
+    "scripts" : {
+        "test" : "mocha",
+    }
+}
+```
 
 ## Write a test
 
