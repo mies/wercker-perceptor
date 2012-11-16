@@ -9,6 +9,7 @@ Below we see a `wercker.json` sample file:
 ``` json
 {
 "customSteps" : {
+    "say_hi" : "echo hi",
     "setup_environment" : {
       "commands": [
         "export LANG=en_US.UTF-8",
