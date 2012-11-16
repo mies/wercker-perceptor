@@ -92,3 +92,15 @@ DATABASES = {
   }
 }
 ```
+
+## Create a Procfile and Heroku deploy target
+
+## Push your changes
+
+``` bash
+git add .
+git commit -am 'init'
+git push origin master
+```
+
+## Deploy
