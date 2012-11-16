@@ -27,6 +27,7 @@ These are the services which are supported by Wercker. The list also includes th
     Username: WERCKER_MYSQL_USERNAME
     Password: WERCKER_MYSQL_PASSWORD
 ```
+There is also a convencience environment variable in the form of `mysql://username:password@hostname:port/databasename`: `WERCKER_MYSQL_URL`
 
 * postgresql
 ```
@@ -35,6 +36,10 @@ These are the services which are supported by Wercker. The list also includes th
     Username: WERCKER_POSTGRESQL_USERNAME
     Password: WERCKER_POSTGRESQL_PASSWORD
 ```
+There is also a convencience environment variable in the form of `postgres://username:password@hostname:port/databasename`: `WERCKER_POSTGRESQL_URL`
+
+
+
 
 * mongodb
 ```
