@@ -1,4 +1,4 @@
-# Getting Started with Flask
+# Getting Started with Django and Postgres
 
 You can find the code for this tutorial on [Github](https://github.com/mies/wercker-django-example)
 
