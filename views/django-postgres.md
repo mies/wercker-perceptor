@@ -79,16 +79,8 @@ DATABASES = {
     "postgresql" : true
   },
   "customSteps" : {
-      "setup_environment" : {
-          "commands" : [
-          "export DJANGO_SETTINGS_MODULE='wercks.test_settings'"
-          ]
-      },
-      "test" : {
-        "commands" : [
-          "python manage.py test"
-        ]
-      }
+      "setup_environment" : "export DJANGO_SETTINGS_MODULE='wercks.test_settings'",
+      "test" : "python manage.py test"
   }
 }
 ```
