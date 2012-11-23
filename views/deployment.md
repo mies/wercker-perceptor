@@ -34,21 +34,21 @@ To specify where to deploy to, create a deploy target in the deployment tab of a
 
 There are two types: Heroku and Custom.
 
-Heroku is used to deploy to Heroku, and Custom can be used to deploy to your own servers (Amazon, Rackspace, etc)
+Heroku is used to deploy to Heroku's PaaS offering, and Custom can be used to deploy to your own servers (Amazon, Rackspace, etc)
 
 Environment variables needed during deployment can be set by the administrator.
 
 ## Create build
 
-Before deploying, a build needs be to be created and passes all tests.
+Before deploying, a build needs be to be created of which all tests have passed.
 
 More information: [Build](build)
 
 ## Start
 
-When ready to deploy, go to the build in Wercker, click Deploy and choose your Deploy Target.
+When ready to deploy, go to the build in Wercker, click Deploy and pick your Deploy Target.
 
-It is also possible to automatically start a deploy by adding #*deploytargetname* in your commit message.
+It is also possible to automatically start a deploy by adding #*deploytargetname* in your commit message. This is not recommended for your production environment.
 
 Only successful builds will be deployed.
 
@@ -82,7 +82,7 @@ HEROKU_APP_NAME=appname
 
 **Heroku only**
 
-A test is done if your API key still is valid and a ssh-key is generated to communicate with Heroku.
+A test is performed to check if your API key still is valid and a ssh-key is generated to communicate with Heroku.
 
 ## Pre-deploy
 
@@ -96,11 +96,11 @@ During pre-deploy you can run scripts needed to run before the deployment itself
 
 For Heroku, these script are run on the server of Heroku (<code>heroku run</code>)
 
-The script or scripts in [wercker.json](werckerjson) in <code>preDeploy</code> are run.
+The script or scripts in [wercker.json](werckerjson) in <code>preDeploy</code> are performed.
 
 ## Deploy
 
-During deploy the script(s) needed to do the actual deployment are run.
+During deploy the script(s) needed to do the actual deployment are executed.
 
 ### Heroku
 
@@ -112,9 +112,9 @@ The script or scripts in [wercker.json](werckerjson) in <code>deploy</code> are 
 
 ## Post-deploy custom
 
-During post-deploy you can run scripts needed to run after the deployment itself.
+During post-deploy you can execute scripts needed to run after the deployment itself.
 
-For Heroku, these script are run on the server of Heroku (<code>heroku run</code>)
+For Heroku, these script are performed on the server of Heroku (<code>heroku run</code>)
 
 The script or scripts in [wercker.json](werckerjson) in <code>postDeploy</code> are run.
 
@@ -129,7 +129,7 @@ The process is restarted and maintance mode is set to false (<code>heroku ps:res
 
 During post-deploy test you can run scripts needed to verify if the deployment was successful.
 
-For example you can try to download the homepage and check if a word exists on the page.
+For example, you can try to download the homepage and check if a specfic word exists on the page.
 
 ```
   "postDeployTest" : ["curl $URL| grep welcome"]
@@ -171,7 +171,7 @@ The Heroku logs are also checked to see if an error has occurred.
 
 ## Post-deploy metrics test
 
-It is possible to check if certain metrics are off after deploying.
+It is possible to check if certain metrics are 'off' after deploying.
 
 This is done a few minutes after deploying, so there is some time to collect some metrics.
 

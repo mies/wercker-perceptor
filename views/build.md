@@ -1,10 +1,10 @@
 # Build
 
-To know the quality of your code, it is inpected everytime you push new code.
+To know the quality of your code, it is inpected every time you push out new code.
 
-Wercker runs default scripts, so the basics are being tested.
+Wercker runs several default scripts, such that the basics will be tested.
 
-In [wercker.json](werckerjson) you can specify additional scripts that need to be run. Also you can disable any step.
+In [wercker.json](werckerjson) you can specify additional scripts that need to be run. You can also disable any step.
 
 
 <table class="diagram">
@@ -28,17 +28,17 @@ In [wercker.json](werckerjson) you can specify additional scripts that need to b
 
 ## $git push
 
-When new code is pushed to git, Wercker get's a notification.
+When new code is pushed to git, Wercker receives a notification.
 
 ## Get code
 
-The repository is retrieved, together with any git submodules.
+The repository is retrieved, alongside any git submodules.
 
 Wercker needs permission to the repository. You can add the user 'wercker' to your project with read rights.
 
 ## Setup Environment
 
-A new sandbox is created to run the build.
+A new sandbox is created in which the build is run.
 
 Wercker tries to determine which programming language is used. When no language can be determined, it falls back to "blank", a simple sandbox.
 
@@ -59,20 +59,20 @@ WERCKER_ROOT=/build/X
 WERCKER_PLATFORM_VERSION=X.X.X
 ```
 
-Each [service](available-services) also sets some environment variables.
+Any [service](available-services) used will also set several environment variables.
 
 ## Platform
 
-The programming language is setup. For Ruby this means rbenv, for Python virtualenv and for Node.js nodeenv.
+The programming language is set up. For Ruby this means rbenv, for Python virtualenv and for Node.js nodeenv.
 
 The default version of the programming language is used.
 
-You can use <code>version</code> in [wercker.json](werckerjson) to override this version.
+You can use <code>version</code> in [wercker.json](werckerjson) to override this version number.
 
 ## Pre-install
 
 Before installing the dependencies of your project, this step is run.
-This is a good place to set your own environment variables and run apt-get install.
+This is a good place to set your own environment variables and run apt-get install for any library you might need.
 
 The script or scripts in [wercker.json](werckerjson) in <code>preInstallScripts</code> are run.
 

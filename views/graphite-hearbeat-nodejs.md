@@ -1,6 +1,6 @@
 # Graphite Heartbeat Example for Node.js
 
-Example to send heartbeat data to Wercker. This is used to check if a [deployment went successful](deployment#post-deploy-metrics-test).
+Example to send heartbeat data to Wercker. This is used to check if a [deploy was successful](deployment#post-deploy-metrics-test).
 
 
 ``` javascript
