@@ -17,16 +17,17 @@ The `wercker.json` file is a powerful way of specifying your development environ
 ``` javascript
 {
   "preInstallScripts" : [
-  "mkdir -p $HOME/go/src",
-  "export GOPATH=$HOME/go",
-  "sudo DEBIAN_FRONTEND=noninteractive apt-get -y install golang"
-  ]
+    "mkdir -p $HOME/go/src",
+    "export GOPATH=$HOME/go",
+    "sudo DEBIAN_FRONTEND=noninteractive apt-get -y install golang"
+  ],
+  "customSteps": {  "go_compile" : "go get" }
 }
 ```
 
 Here we tell Wercker to install the golang package and export our `$GOPATH` environment variable. We use a noninteractive mode so the install does not hang at a menu that pops up.
 
-If we commit and push our `wercker.json` file to GitHub, Wercker picks up our changes and starts the build process. It will install the Go package and we now have a 'Go-enabled' box.
+If we commit and push our `wercker.json` file to GitHub, Wercker picks up our changes and starts the build process. It will install the Go package and we now have a 'Go-enabled' box that's tries to compile your project.
 
 ## Create a Go Unit Test
 
@@ -63,19 +64,17 @@ We are now ready to add a custom build step to our `wercker.json` file so we can
 
 ``` javascript
 {
-"customSteps": {
-  "go_unit_test" : {
-      "commands" : [
-          "go test"
-          ]
-  }
-},
-"preInstallScripts" : [
-  "mkdir -p $HOME/go/src",
-  "export GOPATH=$HOME/go",
-  "sudo DEBIAN_FRONTEND=noninteractive apt-get -y install golang"
-  ]
+  "preInstallScripts" : [
+    "mkdir -p $HOME/go/src",
+    "export GOPATH=$HOME/go",
+    "sudo DEBIAN_FRONTEND=noninteractive apt-get -y install golang"
+  ],
+  "customSteps": {
+    "go_compile" : "go get",
+    "go_unit_test" : "go test"
+    }
 }
+
 ```
 
 Push your changes to Github and see our unit test fail.
