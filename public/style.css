@@ -1,5 +1,5 @@
  body {
-        padding-top: 60px;
+        padding-top: 0px;
         padding-bottom: 40px;
       }
       .sidebar-nav {
@@ -17,6 +17,161 @@ a {
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
   background-color: #CC6685;
 }
+
+/* NEW TOP-BAR */
+.top-bar {
+  background: #222222;
+  height: 45px;
+  line-height: 45px;
+  margin: 0 0 0px;
+  padding: 0;
+  width: 100%;
+  /* Contain width to .row width */
+  /* First <ul> for branding, title, name, etc */
+  /* topbar global <ul> styles */
+  font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 13px;
+  line-height: 1;
+  color: #636664;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+}
+
+.top-bar a {
+  color: #c9564a;
+  text-decoration: none;
+  line-height: inherit;
+}
+.top-bar a img {
+  vertical-align: baseline;
+}
+.top-bar a:hover {
+  color: #c04639;
+}
+
+.top-bar a:focus {
+  color: #c9564a;
+  outline: none;
+}
+.top-bar ul {
+  margin-left: 0;
+  display: inline;
+  height: 45px;
+  line-height: 45px;
+  list-style: none;
+  /* Main Navigation links style */
+  /* Left Side <ul> */
+  /* Right Side <ul> */
+}
+.top-bar ul > li {
+  float: left;
+  /* Dividers between navigation */
+  /* Put a button in an <li> but give is a class */
+  /* Put a search bar or text input in the bar */
+  /* Hide the triangle for breakpoint menu */
+  /* li.has-dropdown */
+}
+.top-bar ul > li a:not(.button) {
+  color: white;
+  display: block;
+  font-size: 13px;
+  font-weight: bold;
+  height: 45px;
+  line-height: 45px;
+  padding: 0 15px;
+}
+.top-bar ul > li:not(.name):hover, .top-bar ul > li:not(.name).active {
+  background: black;
+}
+.top-bar ul > li:not(.name):hover a, .top-bar ul > li:not(.name).active a {
+  color: #d9d9d9;
+}
+/* Firefox Fixes */
+@-moz-document url-prefix() {
+  .top-bar ul li .button.small {
+    padding-bottom: 6px;
+  }
+
+  .top-bar ul li.search form input[type=search] {
+    font-size: 14px;
+    height: 22px;
+    padding: 3px;
+  }
+}
+
+/* IE8 Fixes */
+.lt-ie9 .top-bar ul li a {
+  color: white;
+  display: block;
+  font-weight: bold;
+  font-size: 13px;
+  height: 45px;
+  line-height: 45px;
+  padding: 0 15px;
+}
+.lt-ie9 .top-bar ul li a.button {
+  height: auto;
+  line-height: 30px;
+  margin-top: 7px;
+}
+.lt-ie9 .top-bar ul li a:hover {
+  color: #cccccc;
+}
+.lt-ie9 .top-bar ul li a img {
+  margin-top: -5px;
+  vertical-align: middle;
+}
+.lt-ie9 .top-bar ul li a.active {
+  background: #151515;
+  color: #d9d9d9;
+}
+
+.lt-ie9 .top-bar ul li.has-dropdown {
+  padding-right: 33.75px;
+}
+.lt-ie9 .top-bar ul li.has-dropdown > ul li {
+  padding-right: 0;
+}
+.top-bar ul.right {
+  float: right;
+  width: auto;
+  margin-bottom: 0;
+  /* Dropdown Right Side Alignment */
+}
+.top-bar li a {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+}
+.top-bar li a:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+.top-bar li a.logo {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+.meta-nav li a {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+}
+.meta-nav li a:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+.meta-nav li:first-child {
+  position: relative;
+}
+.meta-nav li:first-child :after {
+  content: "|";
+  position: absolute;
+  top: 0;
+  right: -2px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+}
+/* /NEW TOP-BAR */
 .btn-primary {
   background-color: #cc6685;
   *background-color: #cc6685;

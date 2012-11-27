@@ -10,6 +10,7 @@
 
     </style>
     <link rel="stylesheet" href="/public/style.css"></link>
+    <script src="/public/scripts/foundation/modernizr.foundation.js"></script>
     <script type="text/javascript">
 
   var _gaq = _gaq || [];
@@ -25,7 +26,7 @@
 </script>
   </head>
   <body>
-
+<!--
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container-fluid">
@@ -39,10 +40,24 @@
             <ul class="nav">
               <li class="active"><a href="/">Home</a></li>
             </ul>
-          </div><!--/.nav-collapse -->
+          </div>
         </div>
       </div>
-    </div>
+    </div>-->
+  <div class="top-bar">
+    <ul>
+      <li><a href="https://wercker.com" class="logo"><img src="public/images/logo.png" alt="wercker"/></a></li>
+    </ul>
+
+    <section>
+      <ul class="right meta-nav">
+        <li><a href="https://wercker.com/how/">How it works</a></li>
+        <li><a href="http://devcenter.wercker.com/">Dev Center</a></li>
+        <!--<li><a href="btn-sign-out">Sign out</a></li>-->
+      </ul>
+    </section>
+  </div>
+
 
     <div class="container-fluid">
       <div class="row-fluid">
@@ -50,6 +65,7 @@
         <div class="span2">
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
+  <li><a href="/">Home</a></li>
   <li class="nav-header">Getting Started</li>
   <li><a href="/articles/introduction-wercker">Introduction to Wercker</a></li>
   <li class=""><a href="/articles/werckerjson">wercker.json</a></li>
