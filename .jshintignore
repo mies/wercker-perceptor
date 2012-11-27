@@ -3,6 +3,8 @@ env
 .git
 .idea
 gallio
+public\\scripts\\
+public/scripts/
 public\\js\\libs
 public/js/libs
 public\\bootstrap
