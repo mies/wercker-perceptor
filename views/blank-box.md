@@ -21,7 +21,7 @@ The `wercker.json` file is a powerful way of specifying your development environ
     "export GOPATH=$HOME/go",
     "sudo DEBIAN_FRONTEND=noninteractive apt-get -y install golang"
   ],
-  "customSteps": {  "go_compile" : "go get" }
+  "customSteps": {  "go_build" : "go build" }
 }
 ```
 
@@ -70,7 +70,7 @@ We are now ready to add a custom build step to our `wercker.json` file so we can
     "sudo DEBIAN_FRONTEND=noninteractive apt-get -y install golang"
   ],
   "customSteps": {
-    "go_compile" : "go get",
+    "go_build" : "go build",
     "go_unit_test" : "go test"
     }
 }
