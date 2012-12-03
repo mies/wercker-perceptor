@@ -9,6 +9,7 @@ You can find the code for this tutorial on [Github](https://github.com/mies/werc
 * Create a Rack Configuration
 * Declare your gem dependencies using Bundlder
 * Create a spec folder and add a Spec Helper
+* Create a spec
 * Create a  Rakefile
 * Initiate your Git repository and push your changes to Github
 
@@ -53,13 +54,13 @@ run Sinatra::Application
 A basic `Gemfile` for this application would be:
 
 **Gemfile**
-  
+
 ``` ruby
 source :rubygems
 gem 'sinatra'
 gem 'thin'
 gem 'json'
-  
+
 group :test do
   gem 'rspec'
 end
@@ -73,29 +74,31 @@ Next, run `bundle install` to set up your local bundle.
 
 ``` ruby
   require File.join(File.dirname(__FILE__), '..', 'main.rb')
-  
+
   require 'sinatra'
   require 'rack/test'
-  
+
   set :environment, :test
   set :run, false
   set :raise_errors, true
   set :logging, false
-  
+
   def app
     Sinatra::Application
   end
-  
+
   RSpec.configure do |config|
     config.include Rack::Test::Methods
   end
 ```
 
+## Create your spec
+
 ** spec/spec_app.rb **
 
 ``` ruby
   require 'spec_helper'
-  
+
   describe "Decepticon API" do
     it "should respond to GET" do
       get '/decepticons.json'
