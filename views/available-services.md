@@ -62,6 +62,6 @@ There is also a convencience environment variable in the form of `postgres://use
 More information on language and services:
 
 * [Getting Started with Node.js and Redis](/articles/nodejs-redis/)
-* [Getting Started with Rails and Mongodb](/articles/rails-mongodb/)
+* [Getting Started with Rails and Mongodb](/articles/rails-mongoid/)
 * [Getting Started with Sinatra and Redis](/articles/sinatra-redis/)
 * [Getting Started with Django and Postgres](/articles/django-postgres/)
