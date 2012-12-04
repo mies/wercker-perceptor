@@ -65,3 +65,4 @@ More information on language and services:
 * [Getting Started with Rails and Mongodb](/articles/rails-mongoid/)
 * [Getting Started with Sinatra and Redis](/articles/sinatra-redis/)
 * [Getting Started with Django and Postgres](/articles/django-postgres/)
+* [Getting Started with Go and MongoDB](/articles/golang-mongo/)

@@ -78,3 +78,5 @@ We are now ready to add a custom build step to our `wercker.json` file so we can
 ```
 
 Push your changes to Github and see our unit test fail.
+
+Now that you know how to add Go support to Wercker you are ready to take this to the next level and build a Go application with MongoDB support with this article: [Getting Started with Go and MongoDB](/articles/golang-mongo/)
