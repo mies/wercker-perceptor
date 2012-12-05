@@ -28,7 +28,6 @@ We define our `Decepticon` struct which has a name and a date field, that we can
 package main
 
 import (
-  "os"
   "time"
 )
 
