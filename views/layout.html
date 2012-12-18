@@ -118,7 +118,18 @@
         &copy; Copyright 2012 by <a href="http://wercker.com/">Wercker</a>.
 
       </div>
+<script data-dojo-config="async: 1" src="//ajax.googleapis.com/ajax/libs/dojo/1.8.2/dojo/dojo.js"></script>
+<script type="text/javascript">
 
+require([
+    'dojo/query',
+    'dojo/lang',
+    'dojo/domReady!',
+    ], function(dQuery, lang){
+      dQuery(".steps")
+        // alert("test");
+    });
+</script>
     </div>
 
   </body>
