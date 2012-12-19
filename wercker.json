@@ -4,7 +4,7 @@
       "echo \"install: --no-rdoc --no-ri\" > ~/.gemrc",
       "echo \"update: --no-rdoc --no-ri\" >> ~/.gemrc",
       "sudo apt-get install rubygems -y",
-      "sudo gem install zurb-foundation -v 3.2.3",
+      "sudo gem install zurb-foundation -v 3.2.3"
     ],
     "compass-compile": [
       "compass compile -s compressed"
