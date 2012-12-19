@@ -6,20 +6,7 @@ Wercker runs several default scripts, such that the basics will be tested.
 
 In [wercker.json](werckerjson) you can specify additional scripts that need to be run. You can also disable any step.
 
-<ol class="steps">
-<li>[$git push](#git_push)</li>
-<li>[Get code](#get_code)</li>
-<li>[Setup Environment](#setup_environment)</li>
-<li>[Environment Variables](#environment_variables)</li>
-<li>[Platform](#platform)</li>
-<li>[Pre-install](#pre_install)</li>
-<li>[Dependencies](#dependencies)</li>
-<li>[Pre-test](#pre_test)</li>
-<li>[Auto test](#auto_test)</li>
-<li>[Custom test](#custom_test)</li>
-<li>[Post-test](#post_test)</li>
-<li>[Package](#package)</li>
-<li>[Report](#report)</li>
+<ol class="steps"><li><span>1</span>[$git push](#git_push)</li><li><span>2</span>[Get code](#get_code)</li><li><span>3</span>[Setup Environment](#setup_environment)</li><li><span>4</span>[Environment Variables](#environment_variables)</li><li><span>5</span>[Platform](#platform)</li><li><span>6</span>[Pre-install](#pre_install)</li><li><span>7</span>[Dependencies](#dependencies)</li><li><span>8</span>[Pre-test](#pre_test)</li><li><span>9</span>[Auto test](#auto_test)</li><li><span>10</span>[Custom test](#custom_test)</li><li><span>11</span>[Post-test](#post_test)</li><li><span>12</span>[Package](#package)</li><li><span>13</span>[Report](#report)</li>
 </ol>
 ## <a id="git_push"></a>$git push ##
 

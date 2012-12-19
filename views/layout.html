@@ -4,12 +4,12 @@
 
     <title>Wercker Dev Center - Main</title>
 
-    <link rel="stylesheet" href="/public/bootstrap.min.css"></link>
-    <link rel="stylesheet" href="/public/highlight.css"></link>
+    <link rel="stylesheet" href="/public/styles/bootstrap.min.css"></link>
+    <link rel="stylesheet" href="/public/styles/highlight.css"></link>
     <style type="text/css">
 
     </style>
-    <link rel="stylesheet" href="/public/style.css"></link>
+    <link rel="stylesheet" href="/public/styles/style.css"></link>
     <script src="/public/scripts/foundation/modernizr.foundation.js"></script>
     <script type="text/javascript">
 
@@ -123,11 +123,27 @@
 
 require([
     'dojo/query',
-    'dojo/lang',
+    'dojo/_base/array',
+    "dojo/dom-geometry",
+    "dojo/dom-style",
+    'dojo/NodeList-traverse',
+    'dojo/NodeList-dom',
     'dojo/domReady!',
-    ], function(dQuery, lang){
-      dQuery(".steps")
-        // alert("test");
+    ], function(dQuery, array, dGeom, dStyle){
+      var steps = dQuery(".steps li");
+
+      steps.even().addClass("even");
+
+      array.forEach(steps.children("a"), function(elm, index) {
+        var mBox = dGeom.getMarginBox(elm);
+
+        dStyle.set(elm,  {
+          left: "50%",
+          marginLeft: (-mBox.w*0.5)+"px"
+        })
+
+      });
+
     });
 </script>
     </div>

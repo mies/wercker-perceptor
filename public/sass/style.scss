@@ -1,11 +1,13 @@
- body {
-        padding-top: 0px;
-        padding-bottom: 40px;
-      }
-      .sidebar-nav {
-        padding: 9px 0;
-      }
+@import "arrows/*.png";
 
+body {
+  padding-top: 0px;
+  padding-bottom: 40px;
+}
+
+.sidebar-nav {
+  padding: 9px 0;
+}
 
 a {
   color: #63AD2A;
@@ -212,13 +214,113 @@ border-collapse: separate;
 margin: 20px;
 border:black thick solid;
 border-spacing: 10px;
- table-layout: fixed;
+table-layout: fixed;
 
 }
 .diagram th,td {
-padding:10px;
-border:black thin solid;
-    text-align: center;
-    vertical-align: middle;
+  padding:10px;
+  border:black thin solid;
+  text-align: center;
+  vertical-align: middle;
 }
 
+.steps {
+  border: 1px solid #032428;
+  border-radius: 7px;
+  height: 14px;
+  background-color: #032428;
+  list-style: none;
+  margin: 0;
+  // padding: 0;
+  position: relative;
+  margin-top: 100px;
+  margin-bottom: 60px;
+
+  li {
+    width: percentage(1/13);
+    float: left;
+    position: relative;
+
+    span {
+      color: #fff;
+      background: {
+        image: image-url("arrows/list_step_shape.png");
+      }
+      display: block;
+      width: 31px;
+      padding-right: 2px;
+      height: 33px;
+      line-height: 30px;
+      text-align: center;
+      font-weight: bold;
+      margin: {
+        top: -9px;
+        left: auto;
+        bottom: 0;
+        right: auto;
+      }
+    }
+
+    a {
+      position: absolute;
+      background: #d4d4d4;
+      border: 1px Solid #4e6c70;
+      color: #032428;
+      text: {
+        align: center;
+        decoration: none;
+      }
+      margin: 0 auto;
+      font-size: 16px;
+      padding: {
+        top: 4px;
+        right: 8px;
+        bottom: 5px;
+        left: 8px;
+      }
+      &:hover {
+        background-color: #bf4f67;
+        border-color: #8b2f43;
+        color: #fff;
+      }
+    }
+
+    a {
+      top: auto;
+      bottom: 45px;
+      &:hover {
+        &:before {
+          @include arrows-sprite(list_step_box_arrow_down_hover);
+        }
+      }
+      &:before {
+        content:"";
+        position: absolute;
+        left: 50%;
+        display: block;
+        @include arrows-sprite(list_step_box_arrow_down);
+        height: arrows-sprite-height(list_step_box_arrow);
+        width: arrows-sprite-width(list_step_box_arrow);
+        margin-left: -0.5*arrows-sprite-width(list_step_box_arrow);
+        top: auto;
+        bottom: -6px;
+      }
+    }
+
+    &.even,
+    &:nth-child(even) {
+      a {
+        top: 32px;
+        bottom: auto;
+        &:hover:before {
+          @include arrows-sprite(list_step_box_arrow_hover);
+        }
+        &:before {
+          @include arrows-sprite(list_step_box_arrow);
+          top: -6px;
+        }
+      }
+    }
+
+  }
+}
