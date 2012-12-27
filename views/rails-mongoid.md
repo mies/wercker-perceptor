@@ -38,7 +38,7 @@ bundle install
 
 ## Create your mongoid configuration
 
-We have to let our Rails app know it should use MongoDB so lets create a configuration file.
+We have to let our Rails app know it should use MongoDB, so lets create a configuration file.
 
 Generate a `mongoid.yml` file
 
@@ -65,7 +65,7 @@ test:
 
 ## Create your wercker.json
 
-Wercker has to know it should make MongoDB available for our tests os lets create a `wercker.json` [file](/articles/werckerjson)
+Wercker has to know it should make MongoDB available for our tests, so lets create a `wercker.json` [file](/articles/werckerjson)
 
 **wercker.json**
 

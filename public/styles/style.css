@@ -3,6 +3,10 @@
   background: url('/public/images/arrows-s3ecec5de52.png') no-repeat;
 }
 
+h1 {
+  padding: 20px 0;
+}
+
 /* line 3, ../sass/style.scss */
 body {
   padding-top: 0px;
