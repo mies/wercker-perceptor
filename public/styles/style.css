@@ -380,3 +380,8 @@ a {
 .steps li.even a:before:hover, .steps li.even a:before.list_step_box_arrow_hover, .steps li.even a:before.list_step_box_arrow-hover, .steps li:nth-child(even) a:before:hover, .steps li:nth-child(even) a:before.list_step_box_arrow_hover, .steps li:nth-child(even) a:before.list_step_box_arrow-hover {
   background-position: 0 -78px;
 }
+
+/* line 327, ../sass/style.scss */
+.steps--fourteen li {
+  width: 7.14286%;
+}

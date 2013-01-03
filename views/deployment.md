@@ -8,27 +8,24 @@ In [wercker.json](werckerjson) you can specify which scripts need to be run.
 
 For Custom the best practice is to create a folder named <code>deploy</code> in the root of your project and put everything related to deployment in this folder.
 
-<table class="diagram">
-  <tr>
-    <td>Create deploy target</td>
-    <td>Create build</td>
-    <td>Start</td>
-    <td>Create environment</td>
-    <td>Setup</td>
-    <td>Pre-deploy</td>
-    <td>Pre-deploy custom</td>
-    <td>Deploy</td>
-    <td>Post-deploy custom</td>
-    <td>Post-deploy</td>
-    <td>Post-deploy test</td>
-    <td>Report</td>
-    <td>Post-deploy log test</td>
-    <td>Post-deploy metrics test</td>
-  </tr>
-</table>
+
+<ol class="steps steps--fourteen"><li><span>1</span>[Create deploy target](#create_deploy_target)</li><li><span>2</span>[Create build](#create_build)</li>
+    <li><span>3</span>[Start](start)</li>
+    <li><span>4</span>[Create environment](#create_environment)</li>
+    <li><span>5</span>[Setup](#setup)</li>
+    <li><span>6</span>[Pre-deploy](#predeploy)</li>
+    <li><span>7</span>[Pre-deploy custom](#predeploy_custom)</li>
+    <li><span>8</span>[Deploy](#deploy)</li>
+    <li><span>9</span>[Post-deploy custom](#postdeploy_custom)</li>
+    <li><span>10</span>[Post-deploy](#postdeploy)</li>
+    <li><span>11</span>[Post-deploy test](#postdeploy_test)</li>
+    <li><span>12</span>[Report](#report)</li>
+    <li><span>13</span>[Post-deploy log test](#postdeploy_log_test)</li>
+    <li><span>14</span>[Post-deploy metrics test](#postdeploy_metrics_test)</li>
+</ol>
 
 
-## Create deploy target
+## <a id="create_deploy_target"></a>Create deploy target
 
 To specify where to deploy to, create a deploy target in the deployment tab of a project.
 
@@ -38,13 +35,13 @@ Heroku is used to deploy to Heroku's PaaS offering, and Custom can be used to de
 
 Environment variables needed during deployment can be set by the administrator.
 
-## Create build
+## <a id="create_build"></a>Create build
 
 Before deploying, a build needs be to be created of which all tests have passed.
 
 More information: [Build](build)
 
-## Start
+## <a id="start"></a>Start
 
 When ready to deploy, go to the build in Wercker, click Deploy and pick your Deploy Target.
 
@@ -52,7 +49,7 @@ It is also possible to automatically start a deploy by adding #*deploytargetname
 
 Only successful builds will be deployed.
 
-## Create environment
+## <a id="create_environment"></a>Create environment
 
 A sandbox is created for the deployment.
 
@@ -78,19 +75,19 @@ HEROKU_KEY=apikey (hidden from log)
 HEROKU_APP_NAME=appname
 ```
 
-## Setup
+## <a id="setup"></a>Setup
 
 **Heroku only**
 
 A test is performed to check if your API key still is valid and a ssh-key is generated to communicate with Heroku.
 
-## Pre-deploy
+## <a id="predeploy"></a>Pre-deploy
 
 **Heroku only**
 
 Maintance mode is set to true (<code>heroku maintenance:on</code>).
 
-## Pre-deploy custom
+## <a id="predeploy_custom"></a>Pre-deploy custom
 
 During pre-deploy you can run scripts needed to run before the deployment itself.
 
@@ -98,19 +95,19 @@ For Heroku, these script are run on the server of Heroku (<code>heroku run</code
 
 The script or scripts in [wercker.json](werckerjson) in <code>preDeploy</code> are performed.
 
-## Deploy
+## <a id="deploy"></a>Deploy
 
 During deploy the script(s) needed to do the actual deployment are executed.
 
-### Heroku
+### <a id="heroku"></a>Heroku
 
 The code is pushed to Heroku: <code>git push -f git@heroku.com:$HEROKU_APP_NAME.git master</code>.
 
-### Custom
+### <a id="custom"></a>Custom
 
 The script or scripts in [wercker.json](werckerjson) in <code>deploy</code> are run.
 
-## Post-deploy custom
+## <a id="postdeploy_custom"></a>Post-deploy custom
 
 During post-deploy you can execute scripts needed to run after the deployment itself.
 
@@ -119,13 +116,13 @@ For Heroku, these script are performed on the server of Heroku (<code>heroku run
 The script or scripts in [wercker.json](werckerjson) in <code>postDeploy</code> are run.
 
 
-## Post-deploy
+## <a id="postdeploy"></a>Post-deploy
 
 **Heroku only**
 
 The process is restarted and maintance mode is set to false (<code>heroku ps:restart</code> <code>heroku maintenance:off</code>).
 
-## Post-deploy test
+## <a id="postdeploy_test"></a>Post-deploy test
 
 During post-deploy test you can run scripts needed to verify if the deployment was successful.
 
@@ -145,7 +142,7 @@ After the provisioning ends, the log can be retrieved in the provisioning tab of
 When using [the Google Chrome extension](concepts#google-chrome-extension) a notification is shown whether is passed or failed.
 
 
-## Post-deploy log test
+## <a id="postdeploy_log_test"></a>Post-deploy log test
 
 It is possible to check the logs to verify if the new version is running without any problems.
 
@@ -167,9 +164,9 @@ For more information, see the <a href="http://www.loggly.com/support/using-data/
 The Heroku logs are also checked to see if an error has occurred.
 
 
-<a id="post-deploy-metrics-test"></a>
 
-## Post-deploy metrics test
+
+## <a id="postdeploy_metrics_test"></a>Post-deploy metrics test
 
 It is possible to check if certain metrics are 'off' after deploying.
 

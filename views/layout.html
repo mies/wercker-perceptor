@@ -130,20 +130,23 @@ require([
     'dojo/NodeList-dom',
     'dojo/domReady!',
     ], function(dQuery, array, dGeom, dStyle){
-      var steps = dQuery(".steps li");
+      var steps = dQuery(".steps");
 
-      steps.even().addClass("even");
+      steps.forEach(function(step){
+        var liSteps = dQuery("li", step);
 
-      array.forEach(steps.children("a"), function(elm, index) {
-        var mBox = dGeom.getMarginBox(elm);
+        liSteps.even().addClass("even");
 
-        dStyle.set(elm,  {
-          left: "50%",
-          marginLeft: (-mBox.w*0.5)+"px"
-        })
+        array.forEach(liSteps.children("a"), function(elm, index) {
+          var mBox = dGeom.getMarginBox(elm);
 
+          dStyle.set(elm,  {
+            left: "50%",
+            marginLeft: (-mBox.w*0.5)+"px"
+          })
+
+        });
       });
-
     });
 </script>
     </div>
