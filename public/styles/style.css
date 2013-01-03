@@ -385,3 +385,8 @@ a {
 .steps--fourteen li {
   width: 7.14286%;
 }
+
+/* line 333, ../sass/style.scss */
+.steps--six li {
+  width: 16.66667%;
+}
