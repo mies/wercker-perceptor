@@ -11,7 +11,7 @@ process.on('uncaughtException', function(err) {
   if(err && err.stack){
     error = {error : err.stack};
   }
-  console.error('uncaughtException', error);
+  console.error('uncaughtException', error)
 });
 
 var cachePages = false;
