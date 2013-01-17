@@ -11,18 +11,15 @@ You have to create these scripts yourself. What kind of scripts are up to you: y
 The best practice is to create a folder named <code>provision</code> in the root of your project and put everything related to provisioning in this folder.
 
 
-<table class="diagram">
-  <tr>
-    <td>Create and run</td>
-    <td>Create environment</td>
-    <td>Pre-provision</td>
-    <td>Provision</td>
-    <td>Post-provision</td>
-    <td>Report</td>
-  </tr>
-</table>
-
-## Create and run
+<ol class="steps steps--six">
+    <li><span>1</span>[Create and run](#create_and_run)</li>
+    <li><span>2</span>[Create environment](#create_environment)</li>
+    <li><span>3</span>[Pre-provision](#preprovision)</li>
+    <li><span>4</span>[Provision](#provision)</li>
+    <li><span>5</span>[Post-provision](#postprovision)</li>
+    <li><span>6</span>[Report](#report)</li>
+</ol>
+## <a id="create_and_run"></a>Create and run
 
 If administrator, you can go to the provisioning tab of a project
 Click "Provision new host" to start provisiong a new host.
@@ -36,7 +33,7 @@ Only the log will be saved, so your SSH key won't be stored anywhere on Wercker.
 
 Click "Provision new host" in the form to provision a new host.
 
-## Create environment
+## <a id="create_environment"></a> Create environment
 
 A sandbox is created to run the scripts. This sandbox has the same specifications as the sandbox that was used to create the build.
 
@@ -51,20 +48,20 @@ PROVISION_HOST=host
 PROVISION_SSH_KEY=key (hidden from log)
 ```
 
-## Pre-provision
+## <a id="preprovision"></a>Pre-provision
 
 During pre-provision you can run scripts needed to run before the actual provisioning.
 
 The script or scripts in [wercker.json](werckerjson) in <code>preProvision</code> are run.
 
-## Provision
+## <a id="provision"></a>Provision
 
 During provision the script(s) needed to do the actual provisioning are run.
 
 The script or scripts in [wercker.json](werckerjson) in <code>provision</code> are run.
 
 
-## Post-provision
+## <a id="postprovision"></a>Post-provision
 
 During post-provision you can run scripts needed to run after the provisioning is successful.
 
@@ -72,7 +69,7 @@ For example when a new webserver is added, the loadbalancer can be notified.
 
 The script or scripts in [wercker.json](werckerjson) in <code>postProvision</code> are run.
 
-## Report
+## <a id="report"></a>Report
 
 After the provisioning ends, the log can be retrieved in the provisioning tab of the project.
 

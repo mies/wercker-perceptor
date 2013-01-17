@@ -10,7 +10,7 @@
 
     </style>
     <link rel="stylesheet" href="/public/styles/style.css"></link>
-    <script src="/public/scripts/foundation/modernizr.foundation.js"></script>
+    <script src="/public/scripts/modernizr.js"></script>
     <script type="text/javascript">
 
   var _gaq = _gaq || [];
@@ -89,7 +89,7 @@
         {{content}}
 
       </br>
-        <!--
+       
         <div id="disqus_thread"></div>
         <script type="text/javascript">
             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -98,14 +98,14 @@
             /* * * DON'T EDIT BELOW THIS LINE * * */
             (function() {
                 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
                 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
             })();
         </script>
         <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
         <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
       </div>
-    -->
+     
 
         </div>
 
@@ -131,20 +131,23 @@ require([
     'dojo/NodeList-dom',
     'dojo/domReady!',
     ], function(dQuery, array, dGeom, dStyle){
-      var steps = dQuery(".steps li");
+      var steps = dQuery(".steps");
 
-      steps.even().addClass("even");
+      steps.forEach(function(step){
+        var liSteps = dQuery("li", step);
 
-      array.forEach(steps.children("a"), function(elm, index) {
-        var mBox = dGeom.getMarginBox(elm);
+        liSteps.even().addClass("even");
 
-        dStyle.set(elm,  {
-          left: "50%",
-          marginLeft: (-mBox.w*0.5)+"px"
-        })
+        array.forEach(liSteps.children("a"), function(elm, index) {
+          var mBox = dGeom.getMarginBox(elm);
 
+          dStyle.set(elm,  {
+            left: "50%",
+            marginLeft: (-mBox.w*0.5)+"px"
+          })
+
+        });
       });
-
     });
 </script>
     </div>
