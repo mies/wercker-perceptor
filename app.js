@@ -11,7 +11,7 @@ process.on('uncaughtException', function(err) {
   if(err && err.stack){
     error = {error : err.stack};
   }
-  console.error('uncaughtException', error)
+  console.error('uncaughtException', error);
 });
 
 var cachePages = false;
@@ -58,7 +58,7 @@ var layoutHtml = layout;
 app.engine('md', function(path, options, fn){
   'use strict';
   console.log('parse ' + path);
-  
+
   if(cachePages && cache[path]){
     console.log('cache hit');
     return fn(null,cache[path]);
@@ -73,7 +73,7 @@ app.engine('md', function(path, options, fn){
     }
     try {
       var html = marked(str);
-      
+
       //html = html.replace(/\{\{([^}]+)\}\}/g, function(_, name){
       //  return options[name] || '';
       //})
