@@ -3,27 +3,28 @@
   background: url('/public/images/arrows-s3ecec5de52.png') no-repeat;
 }
 
+/* line 3, ../sass/style.scss */
 h1 {
   padding: 20px 0;
 }
 
-/* line 3, ../sass/style.scss */
+/* line 7, ../sass/style.scss */
 body {
   padding-top: 0px;
   padding-bottom: 40px;
 }
 
-/* line 8, ../sass/style.scss */
+/* line 12, ../sass/style.scss */
 .sidebar-nav {
   padding: 9px 0;
 }
 
-/* line 12, ../sass/style.scss */
+/* line 16, ../sass/style.scss */
 a {
   color: #63AD2A;
 }
 
-/* line 17, ../sass/style.scss */
+/* line 21, ../sass/style.scss */
 .nav-list > .active > a,
 .nav-list > .active > a:hover {
   color: #ffffff;
@@ -32,11 +33,11 @@ a {
 }
 
 /* NEW TOP-BAR */
-/* line 24, ../sass/style.scss */
+/* line 28, ../sass/style.scss */
 .top-bar {
-  background: #222222;
-  height: 45px;
-  line-height: 45px;
+  background: #2c2f33;
+  height: 39px;
+  line-height: 39px;
   margin: 0 0 0px;
   padding: 0;
   width: 100%;
@@ -53,42 +54,42 @@ a {
   -webkit-font-smoothing: antialiased;
 }
 
-/* line 44, ../sass/style.scss */
+/* line 48, ../sass/style.scss */
 .top-bar a {
   color: #c9564a;
   text-decoration: none;
   line-height: inherit;
 }
 
-/* line 49, ../sass/style.scss */
+/* line 53, ../sass/style.scss */
 .top-bar a img {
   vertical-align: baseline;
 }
 
-/* line 52, ../sass/style.scss */
+/* line 56, ../sass/style.scss */
 .top-bar a:hover {
   color: #c04639;
 }
 
-/* line 56, ../sass/style.scss */
+/* line 60, ../sass/style.scss */
 .top-bar a:focus {
   color: #c9564a;
   outline: none;
 }
 
-/* line 60, ../sass/style.scss */
+/* line 64, ../sass/style.scss */
 .top-bar ul {
   margin-left: 0;
   display: inline;
-  height: 45px;
-  line-height: 45px;
+  height: 39px;
+  line-height: 39x;
   list-style: none;
   /* Main Navigation links style */
   /* Left Side <ul> */
   /* Right Side <ul> */
 }
 
-/* line 70, ../sass/style.scss */
+/* line 74, ../sass/style.scss */
 .top-bar ul > li {
   float: left;
   /* Dividers between navigation */
@@ -98,35 +99,35 @@ a {
   /* li.has-dropdown */
 }
 
-/* line 78, ../sass/style.scss */
+/* line 82, ../sass/style.scss */
 .top-bar ul > li a:not(.button) {
   color: white;
   display: block;
   font-size: 13px;
   font-weight: bold;
-  height: 45px;
-  line-height: 45px;
+  height: 39px;
+  line-height: 39px;
   padding: 0 15px;
 }
 
-/* line 87, ../sass/style.scss */
+/* line 91, ../sass/style.scss */
 .top-bar ul > li:not(.name):hover, .top-bar ul > li:not(.name).active {
   background: black;
 }
 
-/* line 90, ../sass/style.scss */
+/* line 94, ../sass/style.scss */
 .top-bar ul > li:not(.name):hover a, .top-bar ul > li:not(.name).active a {
   color: #d9d9d9;
 }
 
 /* Firefox Fixes */
 @-moz-document url-prefix() {
-  /* line 95, ../sass/style.scss */
+  /* line 99, ../sass/style.scss */
   .top-bar ul li .button.small {
     padding-bottom: 6px;
   }
 
-  /* line 99, ../sass/style.scss */
+  /* line 103, ../sass/style.scss */
   .top-bar ul li.search form input[type=search] {
     font-size: 14px;
     height: 22px;
@@ -135,7 +136,7 @@ a {
 }
 
 /* IE8 Fixes */
-/* line 107, ../sass/style.scss */
+/* line 111, ../sass/style.scss */
 .lt-ie9 .top-bar ul li a {
   color: white;
   display: block;
@@ -146,41 +147,41 @@ a {
   padding: 0 15px;
 }
 
-/* line 116, ../sass/style.scss */
+/* line 120, ../sass/style.scss */
 .lt-ie9 .top-bar ul li a.button {
   height: auto;
   line-height: 30px;
   margin-top: 7px;
 }
 
-/* line 121, ../sass/style.scss */
+/* line 125, ../sass/style.scss */
 .lt-ie9 .top-bar ul li a:hover {
   color: #cccccc;
 }
 
-/* line 124, ../sass/style.scss */
+/* line 128, ../sass/style.scss */
 .lt-ie9 .top-bar ul li a img {
   margin-top: -5px;
   vertical-align: middle;
 }
 
-/* line 128, ../sass/style.scss */
+/* line 132, ../sass/style.scss */
 .lt-ie9 .top-bar ul li a.active {
   background: #151515;
   color: #d9d9d9;
 }
 
-/* line 133, ../sass/style.scss */
+/* line 137, ../sass/style.scss */
 .lt-ie9 .top-bar ul li.has-dropdown {
   padding-right: 33.75px;
 }
 
-/* line 136, ../sass/style.scss */
+/* line 140, ../sass/style.scss */
 .lt-ie9 .top-bar ul li.has-dropdown > ul li {
   padding-right: 0;
 }
 
-/* line 139, ../sass/style.scss */
+/* line 143, ../sass/style.scss */
 .top-bar ul.right {
   float: right;
   width: auto;
@@ -188,42 +189,42 @@ a {
   /* Dropdown Right Side Alignment */
 }
 
-/* line 145, ../sass/style.scss */
+/* line 149, ../sass/style.scss */
 .top-bar li a {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
   opacity: 0.6;
 }
 
-/* line 149, ../sass/style.scss */
+/* line 153, ../sass/style.scss */
 .top-bar li a:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
 
-/* line 153, ../sass/style.scss */
+/* line 157, ../sass/style.scss */
 .top-bar li a.logo {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
 
-/* line 157, ../sass/style.scss */
+/* line 161, ../sass/style.scss */
 .meta-nav li a {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
   opacity: 0.6;
 }
 
-/* line 161, ../sass/style.scss */
+/* line 165, ../sass/style.scss */
 .meta-nav li a:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
 
-/* line 165, ../sass/style.scss */
+/* line 169, ../sass/style.scss */
 .meta-nav li:first-child {
   position: relative;
 }
 
-/* line 168, ../sass/style.scss */
+/* line 172, ../sass/style.scss */
 .meta-nav li:first-child :after {
   content: "|";
   position: absolute;
@@ -234,7 +235,7 @@ a {
 }
 
 /* /NEW TOP-BAR */
-/* line 177, ../sass/style.scss */
+/* line 181, ../sass/style.scss */
 .btn-primary {
   background-color: #cc6685;
   *background-color: #cc6685;
@@ -251,7 +252,7 @@ a {
   filter: progid:dximagetransform.microsoft.gradient(enabled=false);
 }
 
-/* line 197, ../sass/style.scss */
+/* line 201, ../sass/style.scss */
 .btn-primary:hover,
 .btn-primary:active,
 .btn-primary.active,
@@ -261,13 +262,13 @@ a {
   *background-color: #cc6685;
 }
 
-/* line 203, ../sass/style.scss */
+/* line 207, ../sass/style.scss */
 .btn-primary:active,
 .btn-primary.active {
   background-color: #cc6685 \9;
 }
 
-/* line 210, ../sass/style.scss */
+/* line 214, ../sass/style.scss */
 .diagram {
   width: 90%;
   border-collapse: separate;
@@ -277,7 +278,7 @@ a {
   table-layout: fixed;
 }
 
-/* line 220, ../sass/style.scss */
+/* line 224, ../sass/style.scss */
 .diagram th, td {
   padding: 10px;
   border: black thin solid;
@@ -285,7 +286,7 @@ a {
   vertical-align: middle;
 }
 
-/* line 227, ../sass/style.scss */
+/* line 231, ../sass/style.scss */
 .steps {
   border: 1px solid #032428;
   border-radius: 7px;
@@ -297,16 +298,16 @@ a {
   margin-top: 100px;
   margin-bottom: 60px;
 }
-/* line 239, ../sass/style.scss */
+/* line 243, ../sass/style.scss */
 .steps li {
   width: 7.69231%;
   float: left;
   position: relative;
 }
-/* line 244, ../sass/style.scss */
+/* line 248, ../sass/style.scss */
 .steps li span {
   color: #fff;
-  background-image: url('/public/images/arrows/list_step_shape.png?1355910464');
+  background-image: url('/public/images/arrows/list_step_shape.png?1359966373');
   display: block;
   width: 31px;
   padding-right: 2px;
@@ -319,7 +320,7 @@ a {
   margin-bottom: 0;
   margin-right: auto;
 }
-/* line 264, ../sass/style.scss */
+/* line 268, ../sass/style.scss */
 .steps li a {
   position: absolute;
   background: #d4d4d4;
@@ -334,22 +335,22 @@ a {
   padding-bottom: 5px;
   padding-left: 8px;
 }
-/* line 281, ../sass/style.scss */
+/* line 285, ../sass/style.scss */
 .steps li a:hover {
   background-color: #bf4f67;
   border-color: #8b2f43;
   color: #fff;
 }
-/* line 288, ../sass/style.scss */
+/* line 292, ../sass/style.scss */
 .steps li a {
   top: auto;
   bottom: 45px;
 }
-/* line 292, ../sass/style.scss */
+/* line 296, ../sass/style.scss */
 .steps li a:hover:before {
   background-position: 0 -72px;
 }
-/* line 296, ../sass/style.scss */
+/* line 300, ../sass/style.scss */
 .steps li a:before {
   content: "";
   position: absolute;
@@ -362,35 +363,35 @@ a {
   top: auto;
   bottom: -6px;
 }
-/* line 43, ../../../../var/lib/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 43, ../../../../../../opt/vagrant_ruby/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .steps li a:before:hover, .steps li a:before.list_step_box_arrow_down_hover, .steps li a:before.list_step_box_arrow_down-hover {
   background-position: 0 -72px;
 }
-/* line 312, ../sass/style.scss */
+/* line 316, ../sass/style.scss */
 .steps li.even a, .steps li:nth-child(even) a {
   top: 32px;
   bottom: auto;
 }
-/* line 315, ../sass/style.scss */
+/* line 319, ../sass/style.scss */
 .steps li.even a:hover:before, .steps li:nth-child(even) a:hover:before {
   background-position: 0 -78px;
 }
-/* line 318, ../sass/style.scss */
+/* line 322, ../sass/style.scss */
 .steps li.even a:before, .steps li:nth-child(even) a:before {
   background-position: 0 -84px;
   top: -6px;
 }
-/* line 43, ../../../../var/lib/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 43, ../../../../../../opt/vagrant_ruby/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .steps li.even a:before:hover, .steps li.even a:before.list_step_box_arrow_hover, .steps li.even a:before.list_step_box_arrow-hover, .steps li:nth-child(even) a:before:hover, .steps li:nth-child(even) a:before.list_step_box_arrow_hover, .steps li:nth-child(even) a:before.list_step_box_arrow-hover {
   background-position: 0 -78px;
 }
 
-/* line 327, ../sass/style.scss */
+/* line 331, ../sass/style.scss */
 .steps--fourteen li {
   width: 7.14286%;
 }
 
-/* line 333, ../sass/style.scss */
+/* line 337, ../sass/style.scss */
 .steps--six li {
   width: 16.66667%;
 }
