@@ -63,7 +63,7 @@ test:
         retry_interval: 0
 ```
 
-We use an `or` operator such that local testing will still work as well as on wercker.
+We use an `or` operator such that local testing (rspec forces this) will still work as well as on wercker.
 
 
 ## Create your wercker.json
