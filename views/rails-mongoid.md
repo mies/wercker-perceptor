@@ -54,7 +54,7 @@ test:
     default:
       database: mongodb_demo_test
       hosts:
-        -  <%= ENV['WERCKER_MONGODB_HOST'] %>
+        -  <%= ENV['WERCKER_MONGODB_HOST'] || 'localhost:27017' %>
       options:
         consistency: :strong
         # In the test environment we lower the retries and retry interval to
@@ -62,6 +62,9 @@ test:
         max_retries: 1
         retry_interval: 0
 ```
+
+We use an `or` operator such that local testing will still work as well as on wercker.
+
 
 ## Create your wercker.json
 
