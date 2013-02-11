@@ -395,3 +395,7 @@ a {
 .steps--six li {
   width: 16.66667%;
 }
+
+.container-fluid {
+  padding-top: 20px;
+}
