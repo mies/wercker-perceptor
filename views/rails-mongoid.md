@@ -28,7 +28,7 @@ For our Object Document Mapper we will use [Mongoid](http://mongoid.org) a popul
 **Gemfile**
 
 ``` ruby
-gem 'mongoid
+gem 'mongoid'
 ```
 Now we are ready to bundle our gems.
 
