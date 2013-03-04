@@ -6,6 +6,7 @@ You can find the code for this tutorial on [Github](https://github.com/mies/werc
 * Prerequisites
 * Set up virtualenv
 * Declare dependencies through `requirements.txt`
+* TODO: Run heroku create
 * Add project to Wercker
 * Create separate `test_settings.py`
 * Write the application
