@@ -97,7 +97,7 @@ Possible values:
 
 ### packages
 
-You can use the packages element to install (apt-get) packages which are not installed.
+You can use the packages element to install (apt-get) packages which are not already installed.
 ``` javascript
   "packages" : ["nano", "vim"]
 ```
