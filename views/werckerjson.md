@@ -38,6 +38,8 @@ Other clauses available in `wercker.json`:
 
   "version" : "2.7"
 
+  "packages" : ["nano", "vim"],
+
   "stepname" : false
 
   "services" : { "servicename" : true }
@@ -92,3 +94,10 @@ Possible values:
 * postgresql
 * rabbitmq
 * redis
+
+### packages
+
+You can use the packages element to install (apt-get) packages which are not installed.
+``` javascript
+  "packages" : ["nano", "vim"]
+```
