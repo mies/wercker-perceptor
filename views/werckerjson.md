@@ -9,11 +9,11 @@ Below we see a `wercker.json` sample file:
 ``` json
 {
 "customSteps" : {
-    "say_hi" : "echo hi",
     "setup_locale" : [
       "export LANG=en_US.UTF-8",
       "export LC_ALL=en_US.UTF-8",
-    ]
+    ],
+    "less" : "node_modules/less/bin/lessc public/style/site.less public/style/site.css"
   },
   "postDeployTest" : ["curl $BASE_URL| grep home"]
 }
@@ -94,3 +94,4 @@ You can use the packages element to install (apt-get) packages which are not alr
 ``` javascript
   "packages" : ["nano", "vim"]
 ```
+
