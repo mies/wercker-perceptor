@@ -90,7 +90,7 @@ The script or scripts in [wercker.json](werckerjson) in `custom steps` are run.
 
 After running the tests of your project, this step is run.
 
-The script or scripts in [wercker.json](werckerjson) in <code>postTestScripts</code> are run.
+The script or scripts in [wercker.json](werckerjson) in `post-test` are run.
 
 ## <a id="package"></a>Package
 
