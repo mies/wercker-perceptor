@@ -69,7 +69,7 @@ for Node.js <code>npm install</code> and for blank <code>make</code>
 
 Before running the tests of your project, this step is run.
 
-The script or scripts in [wercker.json](werckerjson) in <code>preTestScripts</code> are run.
+The script or scripts in [wercker.json](werckerjson) in `pre-test` are run.
 
 ## <a id="auto_test"></a>Auto test
 
