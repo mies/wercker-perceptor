@@ -28,7 +28,7 @@ More information: [Build](build)
 During a [Build](#builds) tests can be run. By default Wercker tries to run the tests. For example in a Node.js environment
 ```npm test``` is executed.
 
-To add custom tests, use the ```customSteps``` property in [wercker.json](werckerjson).
+To add custom tests, use the `custom steps` property in [wercker.json](werckerjson).
 
 <a id="provisioning"></a>
 ## Provisioning

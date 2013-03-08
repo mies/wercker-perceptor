@@ -8,7 +8,7 @@ Below we see a `wercker.json` sample file:
 
 ``` json
 {
-"customSteps" : {
+"custom steps" : {
     "setup_locale" : [
       "export LANG=en_US.UTF-8",
       "export LC_ALL=en_US.UTF-8",
@@ -19,7 +19,7 @@ Below we see a `wercker.json` sample file:
 }
 ```
 
-By utilizing the `customSteps` directive we can add any build steps we might like, in this case exporting some language settings and compiling our `less` stylesheets.
+By utilizing the `custom steps` directive we can add any build steps we might like, in this case exporting some language settings and compiling our `less` stylesheets.
 
 We also add a `postDeployTest` directive to see if our application is running through a `curl` command.
 

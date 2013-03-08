@@ -79,7 +79,7 @@ func Test_StoreAndFind(t *testing.T) {
 
 ## Create a wercker.json file
 
-Through `wercker.json` we define that we want a MongoDB service on wercker. Through a [blank box definition](/articles/blank-box/) we add support for Go and install our application dependencies, i.e. the Go MongoDB driver. The `customSteps` tells Go to run our unit test.
+Through `wercker.json` we define that we want a MongoDB service on wercker. Through a [blank box definition](/articles/blank-box/) we add support for Go and install our application dependencies, i.e. the Go MongoDB driver. The `custom steps` tells Go to run our unit test.
 
 **wercker.json**
 
@@ -88,7 +88,7 @@ Through `wercker.json` we define that we want a MongoDB service on wercker. Thro
   "services" : {
     "mongodb" : true
   },
-  "customSteps": {
+  "custom steps": {
     "go_unit_test" : {
       "commands" : [
       "go test"

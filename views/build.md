@@ -84,7 +84,7 @@ In [wercker.json](werckerjson) you can disable a step using <code>stepname : fal
 
 ## <a id="custom_test"></a>Custom test
 
-The script or scripts in [wercker.json](werckerjson) in <code>customSteps</code> are run.
+The script or scripts in [wercker.json](werckerjson) in `custom steps` are run.
 
 ## <a id="post_test"></a>Post-test
 

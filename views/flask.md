@@ -111,7 +111,7 @@ Now that we have our unit test we need to let Wercker know it should run it, we 
 
 ``` javascript
 {
-  "customSteps" : {
+  "custom steps" : {
     "setup_environment" : {
       "commands": [
         "export LANG=en_US.UTF-8",

@@ -10,7 +10,7 @@ You can find the code for this tutorial on [Github](https://github.com/mies/gobo
 First create a repository on [Go](http://github.com) and add it to Wercker. When picking your environment, select `Create your own (beta)`.
 
 ## Create a Wercker.json file
-The `wercker.json` file is a powerful way of specifying your development environment requirements. Check out the devcenter [article](/articles/wercker-json) to get up to speed on the topic. For this project we will be using the `customSteps` and `preInstallScripts` declaration to set up our custom box.
+The `wercker.json` file is a powerful way of specifying your development environment requirements. Check out the devcenter [article](/articles/wercker-json) to get up to speed on the topic. For this project we will be using the `custom steps` and `preInstallScripts` declaration to set up our custom box.
 
 **wercker.json**
 
@@ -21,7 +21,7 @@ The `wercker.json` file is a powerful way of specifying your development environ
     "export GOPATH=$HOME/go",
     "sudo DEBIAN_FRONTEND=noninteractive apt-get -y install golang"
   ],
-  "customSteps": {  "go_build" : "go build" }
+  "custom steps": {  "go_build" : "go build" }
 }
 ```
 
@@ -69,7 +69,7 @@ We are now ready to add a custom build step to our `wercker.json` file so we can
     "export GOPATH=$HOME/go",
     "sudo DEBIAN_FRONTEND=noninteractive apt-get -y install golang"
   ],
-  "customSteps": {
+  "custom steps": {
     "go_build" : "go build",
     "go_unit_test" : "go test"
     }
