@@ -53,7 +53,7 @@ Other clauses available in `wercker.json`:
 
   "provision" : ["echo my-provision-script.sh"]
 
-  "postProvision" : ["echo my-post-provision-script.sh"]
+  "post-provision" : ["echo my-post-provision-script.sh"]
 ```
 
 All commands are logged by default. If you have sensitive information, it is possible to hide commands from the log.

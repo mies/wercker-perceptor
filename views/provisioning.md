@@ -67,7 +67,7 @@ During post-provision you can run scripts needed to run after the provisioning i
 
 For example when a new webserver is added, the loadbalancer can be notified.
 
-The script or scripts in [wercker.json](werckerjson) in <code>postProvision</code> are run.
+The script or scripts in [wercker.json](werckerjson) in `post-provision` are run.
 
 ## <a id="report"></a>Report
 
