@@ -93,7 +93,7 @@ During pre-deploy you can run scripts needed to run before the deployment itself
 
 For Heroku, these script are run on the server of Heroku (<code>heroku run</code>)
 
-The script or scripts in [wercker.json](werckerjson) in <code>preDeploy</code> are performed.
+The script or scripts in [wercker.json](werckerjson) in <code>pre-deploy</code> are performed.
 
 ## <a id="deploy"></a>Deploy
 

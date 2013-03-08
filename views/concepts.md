@@ -49,7 +49,7 @@ Custom deploy code can be specified in [wercker.json](werckerjson)
 It's possible to set environment variables that can be used in your custom deploy code.
 
 ``` javascript
-  "preDeploy" : ["echo my-pre-deploy-script.sh"]
+  "pre-deploy" : ["echo my-pre-deploy-script.sh"]
 
   "deploy" : ["echo my-deploy-script.sh"]
 

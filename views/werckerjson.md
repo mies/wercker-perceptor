@@ -43,7 +43,7 @@ Other clauses available in `wercker.json`:
 
   "post-test" : ["echo my-post-install-script.sh"]
 
-  "preDeploy" : ["echo my-pre-deploy-script.sh"]
+  "pre-deploy" : ["echo my-pre-deploy-script.sh"]
 
   "deploy" : ["echo my-deploy-script.sh"]
 
