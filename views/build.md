@@ -24,11 +24,11 @@ A new sandbox is created in which the build is run.
 
 Wercker tries to determine which programming language is used. When no language can be determined, it falls back to "blank", a simple sandbox.
 
-In [wercker.json](werckerjson) you can use <code>lang</code> to override the programming language.
+In [wercker.json](werckerjson) you can use `lang` to override the programming language.
 
 New sandboxes for supporting services are also created.
 
-The [services](available-services) defined in [wercker.json](werckerjson) in <code>services</code> are created.
+The [services](available-services) defined in [wercker.json](werckerjson) in `services` are created.
 
 ## <a id="environment_variables"></a> Environment Variables
 
@@ -49,7 +49,7 @@ The programming language is set up. For Ruby this means rbenv, for Python virtua
 
 The default version of the programming language is used.
 
-You can use <code>version</code> in [wercker.json](werckerjson) to override this version number.
+You can use `version` in [wercker.json](werckerjson) to override this version number.
 
 ## <a id="pre_install"></a>Pre-install
 
@@ -62,8 +62,8 @@ The script or scripts in [wercker.json](werckerjson) in `pre-install` are run.
 
 The depencies of your project are installed.
 
-For Ruby this means <code>bundle install</code>, for Python <code>pip install -r requirements.txt</code>,
-for Node.js <code>npm install</code> and for blank <code>make</code>
+For Ruby this means `bundle install`, for Python `pip install -r requirements.txt`,
+for Node.js `npm install` and for blank `make`
 
 ## <a id="pre_test"></a>Pre-test
 
@@ -75,12 +75,12 @@ The script or scripts in [wercker.json](werckerjson) in `pre-test` are run.
 
 Wercker tries to automatically run the tests of your project.
 
-For Ruby this means <code>bundle exec rake</code>,
-for Node.js <code>npm test</code> and for blank <code>make test</code>.
+For Ruby this means `bundle exec rake`,
+for Node.js `npm test` and for blank `make test`.
 
 If your Node.js project contains a jshint configuration file, jshint is also run.
 
-In [wercker.json](werckerjson) you can disable a step using <code>stepname : false</code>.
+In [wercker.json](werckerjson) you can disable a step using `stepname : false`.
 
 ## <a id="custom_test"></a>Custom test
 
