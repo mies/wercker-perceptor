@@ -9,7 +9,7 @@ Below we see a `wercker.json` sample file:
 ``` json
 {
 "custom steps" : {
-    "setup_locale" : [
+    "setup locale" : [
       "export LANG=en_US.UTF-8",
       "export LC_ALL=en_US.UTF-8",
     ],
@@ -25,48 +25,40 @@ We also add a `post-deploy test` directive to see if our application is running 
 
 Other clauses available in `wercker.json`:
 
-``` javascript
-
-  "lang" : "python"
-
-  "version" : "2.7"
-
+``` json
+{
+  "lang" : "python",
+  "version" : "2.7",
   "packages" : ["nano", "vim"],
-
-  "stepname" : false
-
-  "services" : { "servicename" : true }
-
-  "pre-install" : ["echo my-pre-install-script.sh"]
-
-  "pre-test" : ["echo my-pre-test-script.sh"]
-
-  "post-test" : ["echo my-post-install-script.sh"]
-
-  "pre-deploy" : ["echo my-pre-deploy-script.sh"]
-
-  "deploy" : ["echo my-deploy-script.sh"]
-
-  "post-deploy" : ["echo my-post-deploy-script.sh"]
-
-  "pre-provision" : ["echo my-pre-provision-script.sh"]
-
-  "provision" : ["echo my-provision-script.sh"]
-
+  "stepname" : false,
+  "services" : { "servicename" : true },
+  "pre-install" : ["echo my-pre-install-script.sh"],
+  "pre-test" : ["echo my-pre-test-script.sh"],
+  "post-test" : ["echo my-post-install-script.sh"],
+  "pre-deploy" : ["echo my-pre-deploy-script.sh"],
+  "deploy" : ["echo my-deploy-script.sh"],
+  "post-deploy" : ["echo my-post-deploy-script.sh"],
+  "pre-provision" : ["echo my-pre-provision-script.sh"],
+  "provision" : ["echo my-provision-script.sh"],
   "post-provision" : ["echo my-post-provision-script.sh"]
+}
 ```
 
 All commands are logged by default. If you have sensitive information, it is possible to hide commands from the log.
 In stead of the command, use an object and set log to false:
 
-``` javascript
-  "pre-install" : [{cmd : "echo my-pre-install-script.sh", log : false}]
+``` json
+{
+  "pre-install" : [{ "cmd" : "echo my-pre-install-script.sh", "log" : false }]
+}
 ```
 
 You can combine commands that should be logged and that shouldn't be logged:
 
-``` javascript
-  "pre-install" : ["echo 1", {cmd : "echo my-pre-install-script.sh", log : false}, "echo 2"]
+``` json
+{
+  "pre-install" : ["echo 1", { "cmd" : "echo my-pre-install-script.sh", "log" : false }, "echo 2"]
+}
 ```
 
 ### lang
@@ -91,7 +83,8 @@ Possible values:
 ### packages
 
 You can use the packages element to install (apt-get) packages which are not already installed.
-``` javascript
+``` json
+{
   "packages" : ["nano", "vim"]
+}
 ```
-

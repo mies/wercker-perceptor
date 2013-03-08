@@ -115,6 +115,7 @@ run Sinatra::Application
   RSpec.configure do |config|
     config.include Rack::Test::Methods
   end
+```
 
 ## Write a test
 
@@ -132,10 +133,10 @@ Now we're ready to create our `wercker.json` file to specify that we want to use
 
 **wercker.json**
 
-``` javascript
+``` json
 {
   "services" : {
-  "redis" : true
+    "redis" : true
   }
 }
 ```
@@ -143,5 +144,5 @@ Now we're ready to create our `wercker.json` file to specify that we want to use
 ## Push out your code
 
 ``` bash
-$git push origin master
+git push origin master
 ```

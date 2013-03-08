@@ -83,15 +83,15 @@ Through `wercker.json` we define that we want a MongoDB service on wercker. Thro
 
 **wercker.json**
 
-```javascript
+```json
 {
   "services" : {
     "mongodb" : true
   },
   "custom steps": {
-    "go_unit_test" : {
+    "go unit test" : {
       "commands" : [
-      "go test"
+        "go test"
       ]
     }
   },

@@ -109,7 +109,7 @@ Now that we have our unit test we need to let Wercker know it should run it, we 
 
 **werkcer.json**
 
-``` javascript
+``` json
 {
   "custom steps" : {
     "setup_environment" : {
@@ -122,7 +122,7 @@ Now that we have our unit test we need to let Wercker know it should run it, we 
     },
     "flask_test" : {
       "commands" : [
-      "python app_test.py"
+        "python app_test.py"
       ]
     }
   }

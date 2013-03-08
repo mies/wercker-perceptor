@@ -14,14 +14,14 @@ The `wercker.json` file is a powerful way of specifying your development environ
 
 **wercker.json**
 
-``` javascript
+``` json
 {
   "pre-install" : [
     "mkdir -p $HOME/go/src",
     "export GOPATH=$HOME/go",
     "sudo DEBIAN_FRONTEND=noninteractive apt-get -y install golang"
   ],
-  "custom steps": {  "go_build" : "go build" }
+  "custom steps": { "go build" : "go build" }
 }
 ```
 
@@ -62,7 +62,7 @@ func Test_Add2Ints(t *testing.T) {
 
 We are now ready to add a custom build step to our `wercker.json` file so we can run the unit test. Our wercker.json file now looks like:
 
-``` javascript
+``` json
 {
   "pre-install" : [
     "mkdir -p $HOME/go/src",
@@ -70,9 +70,9 @@ We are now ready to add a custom build step to our `wercker.json` file so we can
     "sudo DEBIAN_FRONTEND=noninteractive apt-get -y install golang"
   ],
   "custom steps": {
-    "go_build" : "go build",
-    "go_unit_test" : "go test"
-    }
+    "go build" : "go build",
+    "go unit test" : "go test"
+  }
 }
 
 ```

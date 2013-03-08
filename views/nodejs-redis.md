@@ -26,22 +26,22 @@ We declare our dependencies through a `package.json` file:
 
 **package.json**
 
-``` javascript
+``` json
 {
-    "name": "wercker-redis-node",
-    "version" : "0.0.1",
-    "dependencies" : {
-        "should" : "1.2.1",
-        "mocha" : "1.6.0",
-        "redis" : "0.8.2"
-    },
-    "engines" : {
-        "node" : "0.8.x",
-        "npm" : "1.1.x"
-    },
-    "scripts" : {
-        "test" : "mocha",
-    }
+  "name": "wercker-redis-node",
+  "version" : "0.0.1",
+  "dependencies" : {
+    "should" : "1.2.1",
+    "mocha" : "1.6.0",
+    "redis" : "0.8.2"
+  },
+  "engines" : {
+    "node" : "0.8.x",
+    "npm" : "1.1.x"
+  },
+  "scripts" : {
+    "test" : "mocha",
+  }
 }
 ```
 
@@ -55,7 +55,6 @@ We are going to write a simple unit test using the [should framework](https://gi
 ``` javascript
 var redis = require('redis')
   , should = require('should');
-
 
 describe("Decepticons", function() {
   it("", function(done) {
@@ -81,10 +80,10 @@ Now we're ready to create our `wercker.json` file to specify that we want to use
 
 **wercker.json**
 
-``` javascript
+``` json
 {
   "services" : {
-  "redis" : true
+    "redis" : true
   }
 }
 ```
@@ -92,5 +91,5 @@ Now we're ready to create our `wercker.json` file to specify that we want to use
 ## Push out your code
 
 ``` bash
-$git push origin master
+git push origin master
 ```

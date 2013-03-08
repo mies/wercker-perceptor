@@ -75,10 +75,9 @@ Wercker has to know it should make MongoDB available for our tests, so lets crea
 
 **wercker.json**
 
-``` javascript
+``` json
 {
-  "services" :
-  {
+  "services" :  {
     "mongodb" : true
   }
 }

@@ -74,7 +74,7 @@ DATABASES = {
 
 ## Create a wercker.json file
 
-``` javascript
+``` json
 {
   "services" : {
     "postgresql" : true
