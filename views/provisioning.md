@@ -52,7 +52,7 @@ PROVISION_SSH_KEY=key (hidden from log)
 
 During pre-provision you can run scripts needed to run before the actual provisioning.
 
-The script or scripts in [wercker.json](werckerjson) in <code>preProvision</code> are run.
+The script or scripts in [wercker.json](werckerjson) in `pre-provision` are run.
 
 ## <a id="provision"></a>Provision
 
