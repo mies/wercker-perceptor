@@ -2,3 +2,4 @@ node_modules/
 npm-debug.log
 .DS_Store
 /public/styles/style.css
+/.sass-cache/
