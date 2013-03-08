@@ -10,7 +10,7 @@ You can find the code for this tutorial on [Github](https://github.com/mies/gobo
 First create a repository on [Go](http://github.com) and add it to Wercker. When picking your environment, select `Create your own (beta)`.
 
 ## Create a Wercker.json file
-The `wercker.json` file is a powerful way of specifying your development environment requirements. Check out the devcenter [article](/articles/wercker-json) to get up to speed on the topic. For this project we will be using the `custom steps` and `pre-install` declaration to set up our custom box.
+The `wercker.json` file is a powerful way of specifying your development environment requirements. Check out the devcenter [article](/articles/werckerjson) to get up to speed on the topic. For this project we will be using the `custom steps` and `pre-install` declaration to set up our custom box.
 
 **wercker.json**
 
