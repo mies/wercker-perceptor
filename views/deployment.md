@@ -6,7 +6,7 @@ Wercker support deploying to Heroku and to your own servers (Custom).
 
 In [wercker.json](werckerjson) you can specify which scripts need to be run.
 
-For Custom the best practice is to create a folder named <code>deploy</code> in the root of your project and put everything related to deployment in this folder.
+For Custom the best practice is to create a folder named `deploy` in the root of your project and put everything related to deployment in this folder.
 
 
 <ol class="steps steps--fourteen"><li><span>1</span>[Create deploy target](#create_deploy_target)</li><li><span>2</span>[Create build](#create_build)</li>
@@ -85,15 +85,15 @@ A test is performed to check if your API key still is valid and a ssh-key is gen
 
 **Heroku only**
 
-Maintance mode is set to true (<code>heroku maintenance:on</code>).
+Maintance mode is set to true (`heroku maintenance:on`).
 
 ## <a id="predeploy_custom"></a>Pre-deploy custom
 
 During pre-deploy you can run scripts needed to run before the deployment itself.
 
-For Heroku, these script are run on the server of Heroku (<code>heroku run</code>)
+For Heroku, these script are run on the server of Heroku (`heroku run`)
 
-The script or scripts in [wercker.json](werckerjson) in <code>pre-deploy</code> are performed.
+The script or scripts in [wercker.json](werckerjson) in `pre-deploy` are performed.
 
 ## <a id="deploy"></a>Deploy
 
@@ -101,17 +101,17 @@ During deploy the script(s) needed to do the actual deployment are executed.
 
 ### <a id="heroku"></a>Heroku
 
-The code is pushed to Heroku: <code>git push -f git@heroku.com:$HEROKU_APP_NAME.git master</code>.
+The code is pushed to Heroku: `git push -f git@heroku.com:$HEROKU_APP_NAME.git master`.
 
 ### <a id="custom"></a>Custom
 
-The script or scripts in [wercker.json](werckerjson) in <code>deploy</code> are run.
+The script or scripts in [wercker.json](werckerjson) in `deploy` are run.
 
 ## <a id="postdeploy_custom"></a>Post-deploy custom
 
 During post-deploy you can execute scripts needed to run after the deployment itself.
 
-For Heroku, these script are performed on the server of Heroku (<code>heroku run</code>)
+For Heroku, these script are performed on the server of Heroku (`heroku run`)
 
 The script or scripts in [wercker.json](werckerjson) in `post-deploy` are run.
 
@@ -120,7 +120,7 @@ The script or scripts in [wercker.json](werckerjson) in `post-deploy` are run.
 
 **Heroku only**
 
-The process is restarted and maintance mode is set to false (<code>heroku ps:restart</code> <code>heroku maintenance:off</code>).
+The process is restarted and maintance mode is set to false (`heroku ps:restart` `heroku maintenance:off`).
 
 ## <a id="postdeploy_test"></a>Post-deploy test
 
@@ -155,7 +155,7 @@ To use Loggly, two steps need to be taken by the administrator.
 * In the Admin tab of the project a connection should be made with Loggly
 * In the Deploy Target the Loggly domain and the query that retrieves errors should be specified.
 
-The query can be <code>inputname:app json.application:wercker-sentinel json.level:error</code> for example.
+The query can be `inputname:app json.application:wercker-sentinel json.level:error` for example.
 
 For more information, see the <a href="http://www.loggly.com/support/using-data/search-basics/" target="_blank">Loggly documentation</a>.
 

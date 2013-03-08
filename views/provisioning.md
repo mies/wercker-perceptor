@@ -8,7 +8,7 @@ In [wercker.json](werckerjson) you can specify which scripts need to be run.
 
 You have to create these scripts yourself. What kind of scripts are up to you: you can use bash scripts, Chef, Puppet, anything.
 
-The best practice is to create a folder named <code>provision</code> in the root of your project and put everything related to provisioning in this folder.
+The best practice is to create a folder named `provision` in the root of your project and put everything related to provisioning in this folder.
 
 
 <ol class="steps steps--six">
@@ -58,7 +58,7 @@ The script or scripts in [wercker.json](werckerjson) in `pre-provision` are run.
 
 During provision the script(s) needed to do the actual provisioning are run.
 
-The script or scripts in [wercker.json](werckerjson) in <code>provision</code> are run.
+The script or scripts in [wercker.json](werckerjson) in `provision` are run.
 
 
 ## <a id="postprovision"></a>Post-provision
