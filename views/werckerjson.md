@@ -47,7 +47,7 @@ Other clauses available in `wercker.json`:
 
   "deploy" : ["echo my-deploy-script.sh"]
 
-  "postDeploy" : ["echo my-post-deploy-script.sh"]
+  "post-deploy" : ["echo my-post-deploy-script.sh"]
 
   "preProvision" : ["echo my-pre-provision-script.sh"]
 

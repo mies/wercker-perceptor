@@ -113,7 +113,7 @@ During post-deploy you can execute scripts needed to run after the deployment it
 
 For Heroku, these script are performed on the server of Heroku (<code>heroku run</code>)
 
-The script or scripts in [wercker.json](werckerjson) in <code>postDeploy</code> are run.
+The script or scripts in [wercker.json](werckerjson) in `post-deploy` are run.
 
 
 ## <a id="postdeploy"></a>Post-deploy

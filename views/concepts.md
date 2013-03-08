@@ -53,7 +53,7 @@ It's possible to set environment variables that can be used in your custom deplo
 
   "deploy" : ["echo my-deploy-script.sh"]
 
-  "postDeploy" : ["echo my-post-deploy-script.sh"]
+  "post-deploy" : ["echo my-post-deploy-script.sh"]
 ```
 
 More information: [Deployment](deployment)
