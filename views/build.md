@@ -56,7 +56,7 @@ You can use <code>version</code> in [wercker.json](werckerjson) to override this
 Before installing the dependencies of your project, this step is run.
 This is a good place to set your own environment variables and run apt-get install for any library you might need.
 
-The script or scripts in [wercker.json](werckerjson) in <code>preInstallScripts</code> are run.
+The script or scripts in [wercker.json](werckerjson) in `pre-install` are run.
 
 ## <a id="dependencies"></a>Dependencies
 

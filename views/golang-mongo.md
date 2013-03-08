@@ -95,7 +95,7 @@ Through `wercker.json` we define that we want a MongoDB service on wercker. Thro
       ]
     }
   },
-  "preInstallScripts" : [
+  "pre-install" : [
     "mkdir -p $HOME/go/src",
     "export GOPATH=$HOME/go",
     "sudo DEBIAN_FRONTEND=noninteractive apt-get -y install golang bzr",

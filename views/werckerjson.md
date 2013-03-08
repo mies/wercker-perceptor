@@ -37,7 +37,7 @@ Other clauses available in `wercker.json`:
 
   "services" : { "servicename" : true }
 
-  "preInstallScripts" : ["echo my-pre-install-script.sh"]
+  "pre-install" : ["echo my-pre-install-script.sh"]
 
   "preTestScripts" : ["echo my-pre-test-script.sh"]
 
@@ -60,13 +60,13 @@ All commands are logged by default. If you have sensitive information, it is pos
 In stead of the command, use an object and set log to false:
 
 ``` javascript
-  "preInstallScripts" : [{cmd : "echo my-pre-install-script.sh", log : false}]
+  "pre-install" : [{cmd : "echo my-pre-install-script.sh", log : false}]
 ```
 
 You can combine commands that should be logged and that shouldn't be logged:
 
 ``` javascript
-  "preInstallScripts" : ["echo 1", {cmd : "echo my-pre-install-script.sh", log : false}, "echo 2"]
+  "pre-install" : ["echo 1", {cmd : "echo my-pre-install-script.sh", log : false}, "echo 2"]
 ```
 
 ### lang
