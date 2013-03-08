@@ -4,7 +4,7 @@ You can find the code for this tutorial on [Github](https://github.com/mies/werc
 
 ### Table of Contents
 * Prerequisites
-* Add project to Wercker
+* Add project to wercker
 * Write the API
 * Declare dependencies through a `package.json` file
 * Create a test folder and add a Mocha unit test
@@ -13,10 +13,10 @@ You can find the code for this tutorial on [Github](https://github.com/mies/werc
 ## Prerequisites
 * Basic knowledge on node.js, and Express
 * Have the Mocha testing framework installed (`npm install -g mocha`).
-* A Wercker account and a GitHub repository for the code you will write
+* A wercker account and a GitHub repository for the code you will write
 
-## Add project to Wercker
-Add your GitHub project to Wercker
+## Add project to wercker
+Add your GitHub project to wercker
 
 
 ## Write the API
@@ -27,11 +27,11 @@ Create an Express application with the following code:
 ``` javascript
   var express = require('express');
   var app = express();
-  
+
   app.get('/', function(req, res){
     res.send("Hello Cybertron!")
   });
-  
+
   app.get('/insecticons.json', function(req, res){
     res.writeHead(200, { 'Content-Type': 'application/json' });
     res.write(JSON.stringify({insecticons : ["Shrapnel","Bombshell", "Kickback"]}));
@@ -40,7 +40,7 @@ Create an Express application with the following code:
 
   var port = process.env.PORT || 5000;
   app.listen(port);
-  
+
   module.exports = app;
 ```
 
@@ -77,9 +77,9 @@ Next, run `npm install` to set up your local environment.
 ``` javascript
   var request = require('supertest')
     , express = require('express');
-  
+
   var app = require('../app.js');
-  
+
   describe('GET /', function(){
     it('respond with plain text', function(done){
       request(app)
@@ -87,7 +87,7 @@ Next, run `npm install` to set up your local environment.
         .expect(200, done);
     })
   })
-  
+
   describe('GET', function(){
     it('respond with json', function(done){
       request(app)
@@ -99,7 +99,7 @@ Next, run `npm install` to set up your local environment.
   })
 ```
 
-** Note: For simple node.js applications, Wercker does not need a `wercker.json` file to run the unit tests. It automatically runs them if you've defined them correctly in your `package.json` **
+** Note: For simple node.js applications, wercker does not need a `wercker.json` file to run the unit tests. It automatically runs them if you've defined them correctly in your `package.json` **
 
 ## Initiate your Git repository and push your changes to Github
 ```

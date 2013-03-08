@@ -1,3 +1,3 @@
-# Introduction to Wercker
+# Introduction to wercker
 
 Wercker is a continuous deployment platform.

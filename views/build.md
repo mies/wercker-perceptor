@@ -10,7 +10,7 @@ In [wercker.json](werckerjson) you can specify additional scripts that need to b
 </ol>
 ## <a id="git_push"></a>git push ##
 
-When new code is pushed to git, Wercker receives a notification.
+When new code is pushed to git, wercker receives a notification.
 
 ## <a id="get_code"></a> Get code
 

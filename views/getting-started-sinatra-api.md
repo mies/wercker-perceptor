@@ -4,7 +4,7 @@ You can find the code for this tutorial on [Github](https://github.com/mies/werc
 
 ### Table of Contents
 * Prerequisites
-* Add project to Wercker
+* Add project to wercker
 * Write the API
 * Create a Rack Configuration
 * Declare your gem dependencies using Bundlder
@@ -15,10 +15,10 @@ You can find the code for this tutorial on [Github](https://github.com/mies/werc
 
 ## Prerequisites
 * Basic knowledge on Ruby, Sinatra and have Ruby 1.9.3 installed alongside Rubygems, Bundler and Sinatra.
-* A Wercker account and a GitHub repository for the code you will write
+* A wercker account and a GitHub repository for the code you will write
 
-## Add project to Wercker
-Add your GitHub project to Wercker
+## Add project to wercker
+Add your GitHub project to wercker
 
 
 ## Write the API

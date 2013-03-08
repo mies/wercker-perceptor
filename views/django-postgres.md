@@ -7,7 +7,7 @@ You can find the code for this tutorial on [Github](https://github.com/mies/werc
 * Set up virtualenv
 * Declare dependencies through `requirements.txt`
 * TODO: Run heroku create
-* Add project to Wercker
+* Add project to wercker
 * Create separate `test_settings.py`
 * Write the application
 * TODO: Create a simple unit test
@@ -20,7 +20,7 @@ You can find the code for this tutorial on [Github](https://github.com/mies/werc
 * Knowledge of Python and Django
 * Have Python 2.7 and [virtualenv](http://pypi.python.org/pypi/virtualenv) installed
 * Use [pip](http://pypi.python.org/pypi/pip) for dependencies
-* A Wercker account and a GitHub repository for the code you will write
+* A wercker account and a GitHub repository for the code you will write
 
 ## Set up virtualenv
 
@@ -55,8 +55,8 @@ And now export these to `requirements.txt`
 pip freeze > requirements.txt
 ```
 
-## Add project to Wercker
-Now add your repository on Wercker
+## Add project to wercker
+Now add your repository on wercker
 
 ## Create separate test_settings.py
 

@@ -1,6 +1,6 @@
 # Deployment
 
-The main benefit of using Wercker is that you can Deploy Continuously.
+The main benefit of using wercker is that you can Deploy Continuously.
 
 Wercker support deploying to Heroku and to your own servers (Custom).
 
@@ -43,7 +43,7 @@ More information: [Build](build)
 
 ## <a id="start"></a>Start
 
-When ready to deploy, go to the build in Wercker, click Deploy and pick your Deploy Target.
+When ready to deploy, go to the build in wercker, click Deploy and pick your Deploy Target.
 
 It is also possible to automatically start a deploy by adding #*deploytargetname* in your commit message. This is not recommended for your production environment.
 

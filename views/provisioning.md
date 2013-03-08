@@ -29,7 +29,7 @@ Click "Provision new host" to start provisiong a new host.
 * Build: the build containing the provision script to be used
 * Environment variables: additional variables needed by the provision script
 
-Only the log will be saved, so your SSH key won't be stored anywhere on Wercker.
+Only the log will be saved, so your SSH key won't be stored anywhere on wercker.
 
 Click "Provision new host" in the form to provision a new host.
 

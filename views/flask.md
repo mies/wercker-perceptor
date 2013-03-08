@@ -6,7 +6,7 @@ You can find the code for this tutorial on [Github](https://github.com/mies/werc
 * Prerequisites
 * Set up virtualenv
 * Declare dependencies through `requirements.txt`
-* Add project to Wercker
+* Add project to wercker
 * Write the API
 * Create a simple unit test
 * Create a wercker.json file
@@ -18,7 +18,7 @@ You can find the code for this tutorial on [Github](https://github.com/mies/werc
 * Basic knowledge on Python and the [Flask](http://flask.pocoo.org) micro framework
 * Have Python 2.7 and [virtualenv](http://pypi.python.org/pypi/virtualenv) installed
 * Use [pip](http://pypi.python.org/pypi/pip) for dependencies
-* A Wercker account and a GitHub repository for the code you will write
+* A wercker account and a GitHub repository for the code you will write
 
 ## Set up our Virtualenv
 
@@ -43,8 +43,8 @@ And now activate your newly created environment:
 	$ pip freeze > requirements.txt
 ```
 
-## Add project to Wercker
-Add your GitHub project to Wercker using the Wercker dashboard
+## Add project to wercker
+Add your GitHub project to wercker using the wercker dashboard
 * Goto `Add project`
 * Pick GitHub and select your repository for this project
 
@@ -105,7 +105,7 @@ if __name__ == '__main__':
 
 ## Create a wercker.json file
 
-Now that we have our unit test we need to let Wercker know it should run it, we do this through a `wercker.json` file within out project folder.
+Now that we have our unit test we need to let wercker know it should run it, we do this through a `wercker.json` file within out project folder.
 
 **werkcer.json**
 
@@ -141,7 +141,7 @@ We are going to deploy our simple API to Heroku, which expects a Procfile that d
 	web: python app.py
 ```
 
-From the Wercker dashboard select the deployment tab and create a Heroku deploy target by adding your Heroku API key.from your [account page on Heroku](https://dashboard.heroku.com/account)
+From the wercker dashboard select the deployment tab and create a Heroku deploy target by adding your Heroku API key.from your [account page on Heroku](https://dashboard.heroku.com/account)
 
 ## Push your code to GitHub
 
@@ -151,7 +151,7 @@ From the Wercker dashboard select the deployment tab and create a Heroku deploy 
 	git push origin master
 ```
 
-As you have previously added this repository to Wercker, your push gets automatically picked up and triggers a build.
+As you have previously added this repository to wercker, your push gets automatically picked up and triggers a build.
 
 ## Deploy your application to Heroku
 

@@ -1,9 +1,9 @@
-# Getting stated with Rails and MongoDB on Wercker
+# Getting stated with Rails and MongoDB on wercker
 You can find the code for this tutorial on [Github](https://github.com/mies/mongodb-demo)
 
 ### Table of Contents
 * Prerequisites
-* Add project to Wercker
+* Add project to wercker
 * Create a new Rails project
 * Declare dependencies
 * Create your mongoid configuration
@@ -46,7 +46,7 @@ Generate a `mongoid.yml` file
 rails g mongoid:config
 ```
 
-and update the `test` section with the Wercker [environment variable](/articles/available-services):
+and update the `test` section with the wercker [environment variable](/articles/available-services):
 
 ``` bash
 test:

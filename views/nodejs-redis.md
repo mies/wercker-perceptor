@@ -1,10 +1,10 @@
-# Getting started with node.js and Redis on Wercker
+# Getting started with node.js and Redis on wercker
 
 ### Table of Contents
 * Prerequisites
 * Introducing Redis
 * Specify dependencies through package.json
-* Add project to Wercker
+* Add project to wercker
 * Write a test
 * Add a wercker.json file
 * Push your code
@@ -12,13 +12,13 @@
 
 ## Prerequisites
 * Basic knowledge on node.js and have Redis installed.
-* A Wercker account and a GitHub repository for the code you will write
+* A wercker account and a GitHub repository for the code you will write
 
 ## Introducing Redis
 Redis is an open-source key-value store that can contain data structures such as lists, hashes and sets.
 
-## Add project to Wercker
-Add your GitHub project to Wercker
+## Add project to wercker
+Add your GitHub project to wercker
 
 ## Specify dependencies through package.json
 

@@ -1,15 +1,15 @@
-# Using a Blank Wercker Box
+# Using a blank wercker box
 
-In this article we will explain how to get started with a blank box if you use a development environment which is not currently supported by Wercker.
+In this article we will explain how to get started with a blank box if you use a development environment which is not currently supported by wercker.
 You can find the code for this tutorial on [Github](https://github.com/mies/gobox)
 
 ## Introducing Go
-[Go](http://golang.org) is an open source language developed by Google. We are going to add support for Go on top of a Wercker blank box. If you want to learn more about Go, check out the Go homepage or the excellent site, [Go by Example](https://gobyexample.com)
+[Go](http://golang.org) is an open source language developed by Google. We are going to add support for Go on top of a wercker blank box. If you want to learn more about Go, check out the Go homepage or the excellent site, [Go by Example](https://gobyexample.com)
 
-## Create your Repository and Project on Wercker
-First create a repository on [github.com](http://github.com) and add it to Wercker. When picking your environment, select `Create your own (beta)`.
+## Create your Repository and Project on wercker
+First create a repository on [github.com](http://github.com) and add it to wercker. When picking your environment, select `Create your own (beta)`.
 
-## Create a Wercker.json file
+## Create a wercker.json file
 The `wercker.json` file is a powerful way of specifying your development environment requirements. Check out the devcenter [article](/articles/werckerjson) to get up to speed on the topic. For this project we will be using the `custom steps` and `pre-install` declaration to set up our custom box.
 
 **wercker.json**
@@ -25,9 +25,9 @@ The `wercker.json` file is a powerful way of specifying your development environ
 }
 ```
 
-Here we tell Wercker to install the golang package and export our `$GOPATH` environment variable. We use a noninteractive mode so the install does not hang at a menu that pops up.
+Here we tell wercker to install the golang package and export our `$GOPATH` environment variable. We use a noninteractive mode so the install does not hang at a menu that pops up.
 
-If we commit and push our `wercker.json` file to GitHub, Wercker picks up our changes and starts the build process. It will install the Go package and we now have a 'Go-enabled' box that's tries to compile your project.
+If we commit and push our `wercker.json` file to GitHub, wercker picks up our changes and starts the build process. It will install the Go package and we now have a 'Go-enabled' box that's tries to compile your project.
 
 ## Create a Go Unit Test
 
@@ -79,4 +79,4 @@ We are now ready to add a custom build step to our `wercker.json` file so we can
 
 Push your changes to Github and see our unit test fail.
 
-Now that you know how to add Go support to Wercker you are ready to take this to the next level and build a Go application with MongoDB support with this article: [Getting Started with Go and MongoDB](/articles/golang-mongo/)
+Now that you know how to add Go support to wercker you are ready to take this to the next level and build a Go application with MongoDB support with this article: [Getting Started with Go and MongoDB](/articles/golang-mongo/)

@@ -1,6 +1,6 @@
 # Available Services
 
-Most applications use a database to store data or a message queue to handle jobs asynchronously. With Wercker you can specify which services you require and Wercker will provision them for you.
+Most applications use a database to store data or a message queue to handle jobs asynchronously. With wercker you can specify which services you require and wercker will provision them for you.
 
 This is done by specifying the required services in your `wercker.json` file. Through environment variables you will then be able to access these services.
 
@@ -18,7 +18,7 @@ To be able to use services you must first specify them in the service property i
 
 ## Supported services
 
-These are the services which are supported by Wercker. The list also includes the environment variables needed to access the service. It is important that you use these environment variables, since the login information might change.
+These are the services which are supported by wercker. The list also includes the environment variables needed to access the service. It is important that you use these environment variables, since the login information might change.
 
 * mysql
 ```

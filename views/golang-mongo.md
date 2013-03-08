@@ -1,9 +1,9 @@
-# Getting stated with Go and MongoDB on Wercker
+# Getting stated with Go and MongoDB on wercker
 You can find the code for this tutorial on [Github](https://github.com/mies/wercker-golang-mongo)
 
 ### Table of Contents
 * Prerequisites
-* Add project to Wercker
+* Add project to wercker
 * Create your structs
 * Create a Unit Test
 * Create a wercker.json file
@@ -16,8 +16,8 @@ You can find the code for this tutorial on [Github](https://github.com/mies/werc
 For this tutorial you need to have knowledge of [Go](http://golang.org) and MongoDB.
 We will be using [mgo](http://labix.org/mgo) as a Go MongoDB driver.
 
-## Add project to Wercker
-First, create a repo to hold you code and add your project on Wercker.
+## Add project to wercker
+First, create a repo to hold you code and add your project on wercker.
 
 ## Create your structs
 

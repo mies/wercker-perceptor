@@ -13,9 +13,9 @@ This page explains some of the core concepts of wercker:
 <a id="builds"></a>
 ## Builds
 
-Every time a push to git is done, Wercker pulls this commit. Wercker compiles, tests and packages the code.
+Every time a push to git is done, wercker pulls this commit. wercker compiles, tests and packages the code.
 
-When no compilation is needed, this step is skipped. This process is called building, and in Wercker
+When no compilation is needed, this step is skipped. This process is called building, and in wercker
 each seperate push leads to one Build.
 
 In the project overview there is a list of the latest builds.
@@ -25,7 +25,7 @@ More information: [Build](build)
 <a id="tests"></a>
 ## Tests
 
-During a [Build](#builds) tests can be run. By default Wercker tries to run the tests. For example in a Node.js environment
+During a [Build](#builds) tests can be run. By default wercker tries to run the tests. For example in a Node.js environment
 ```npm test``` is executed.
 
 To add custom tests, use the `custom steps` property in [wercker.json](werckerjson).
@@ -76,7 +76,7 @@ More information: [Deployment](deployment)
 ## Google Chrome extension
 
 You can get real-time notifications of what is happining with your projects, using
-<a href="https://chrome.google.com/webstore/detail/wercker-build-notificatio/hdbipaohmcaebblpcioidpgkeijnikch" target="_blank">the Wercker Google Chrome extension</a>.
+<a href="https://chrome.google.com/webstore/detail/wercker-build-notificatio/hdbipaohmcaebblpcioidpgkeijnikch" target="_blank">the wercker Google Chrome extension</a>.
 You will get notified when the following events occur:
 
 *   [Build](#builds) failed
