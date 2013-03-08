@@ -129,11 +129,11 @@ During post-deploy test you can run scripts needed to verify if the deployment w
 For example, you can try to download the homepage and check if a specfic word exists on the page.
 
 ```
-  "postDeployTest" : ["curl $URL| grep welcome"]
+  "post-deploy test" : ["curl $URL| grep welcome"]
 ```
 
 
-The script or scripts in [wercker.json](werckerjson) in <code>postDeployTest</code> are run.
+The script or scripts in [wercker.json](werckerjson) in `post-deploy test` are run.
 
 ## Report
 

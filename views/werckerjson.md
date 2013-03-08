@@ -15,13 +15,13 @@ Below we see a `wercker.json` sample file:
     ],
     "less" : "node_modules/less/bin/lessc public/style/site.less public/style/site.css"
   },
-  "postDeployTest" : ["curl $BASE_URL| grep home"]
+  "post-deploy test" : ["curl $BASE_URL| grep home"]
 }
 ```
 
 By utilizing the `custom steps` directive we can add any build steps we might like, in this case exporting some language settings and compiling our `less` stylesheets.
 
-We also add a `postDeployTest` directive to see if our application is running through a `curl` command.
+We also add a `post-deploy test` directive to see if our application is running through a `curl` command.
 
 Other clauses available in `wercker.json`:
 
