@@ -7,7 +7,7 @@ You can find the code for this tutorial on [Github](https://github.com/mies/gobo
 [Go](http://golang.org) is an open source language developed by Google. We are going to add support for Go on top of a Wercker blank box. If you want to learn more about Go, check out the Go homepage or the excellent site, [Go by Example](https://gobyexample.com)
 
 ## Create your Repository and Project on Wercker
-First create a repository on [Go](http://github.com) and add it to Wercker. When picking your environment, select `Create your own (beta)`.
+First create a repository on [github.com](http://github.com) and add it to Wercker. When picking your environment, select `Create your own (beta)`.
 
 ## Create a Wercker.json file
 The `wercker.json` file is a powerful way of specifying your development environment requirements. Check out the devcenter [article](/articles/werckerjson) to get up to speed on the topic. For this project we will be using the `custom steps` and `pre-install` declaration to set up our custom box.
