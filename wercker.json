@@ -1,14 +1,15 @@
 {
-  "packages" : ["rubygems"],
-	"customSteps" : {
-    "compass-install": [
+  "packages": [
+    "rubygems"
+  ],
+  "custom steps": {
+    "compass install": [
       "echo \"install: --no-rdoc --no-ri\" > ~/.gemrc",
       "echo \"update: --no-rdoc --no-ri\" >> ~/.gemrc",
       "sudo gem install zurb-foundation -v 3.2.3"
     ],
-    "compass-compile": [
+    "compass compile": [
       "compass compile -s compressed"
     ]
-	}
+  }
 }
-
