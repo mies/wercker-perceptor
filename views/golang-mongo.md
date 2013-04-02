@@ -4,13 +4,14 @@ You can find the code for this tutorial on [Github](https://github.com/mies/werc
 ### Table of Contents
 * Prerequisites
 * Add project to wercker
+* create a .godir file
 * Create your structs
 * Create a Unit Test
 * Create a wercker.json file
-* TODO: Create a Procfile and Heroku deploy target
 * Push your changes to Github
-* TODO: Add Mongolab
-* TODO: Deploy to Heroku
+<!--TODO: Create a Procfile and Heroku deploy target
+TODO: Add Mongolab
+TODO: Deploy to Heroku -->
 
 ## Prerequisites
 For this tutorial you need to have knowledge of [Go](http://golang.org) and MongoDB.
@@ -19,8 +20,10 @@ We will be using [mgo](http://labix.org/mgo) as a Go MongoDB driver.
 ## Add project to wercker
 First, create a repo to hold you code and add your project on wercker.
 
-## Create your structs
+## Add a .godir file
+Add an empty .godir file to your repository. This file is used when deploying to Heroku. Since this is beyond the scope of this tutorial, we can leave it empty.
 
+## Create your structs
 We define our `Decepticon` struct which has a name and a date field, that we can store into MongoDB.
 
 **main.go**
@@ -42,8 +45,8 @@ type Decepticon struct {
 Our unit test will create two decepticons and will check if one of them can be retrieved from MongoDB.
 
 **main_test.go**
-
 ```go
+
 package main
 
 import (
@@ -62,7 +65,7 @@ func Test_StoreAndFind(t *testing.T) {
   defer session.Close()
 
   conn := session.DB("test").C("decepticons")
-  err = conn.Insert(&Decepticon{"Shockwave"}, &Decepticon{"Starscream"})
+  err = conn.Insert(&Decepticon{"Shockwave", time.Now()}, &Decepticon{"Starscream", time.Now()})
   if err != nil {
     t.Error("Could not insert a Decepticon")
   }
@@ -79,7 +82,7 @@ func Test_StoreAndFind(t *testing.T) {
 
 ## Create a wercker.json file
 
-Through `wercker.json` we define that we want a MongoDB service on wercker. Through a [blank box definition](/articles/blank-box/) we add support for Go and install our application dependencies, i.e. the Go MongoDB driver. The `custom steps` tells Go to run our unit test.
+Through `wercker.json` we define that we want a MongoDB service on wercker. That is all...
 
 **wercker.json**
 
@@ -87,19 +90,9 @@ Through `wercker.json` we define that we want a MongoDB service on wercker. Thro
 {
   "services" : {
     "mongodb" : true
-  },
-  "custom steps": {
-    "go unit test" : {
-      "commands" : [
-        "go test"
-      ]
-    }
-  },
-  "pre-install" : [
-    "mkdir -p $HOME/go/src",
-    "export GOPATH=$HOME/go",
-    "sudo DEBIAN_FRONTEND=noninteractive apt-get -y install golang bzr",
-    "go get labix.org/v2/mgo"
-  ]
+  }
 }
 ```
+
+## Push your changes to GitHub
+Push your changes to GitHub and see the build results on wercker.
