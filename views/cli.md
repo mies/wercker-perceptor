@@ -32,7 +32,8 @@ Depending on your operating systems you may have to run this with superuser priv
 Wercker supports the following commands:
 
 ### create
-Adds an application to wercker.
+Adds an application to wercker. This will create a `.wercker` file in
+your repository.
 
 ### status
 Show the status of the most recent build.
@@ -52,7 +53,7 @@ Opens a webpage showing a deploy target's details
 List apps the user has access to
 
 ### link
-Link a repository back up to an apps on wercker. Useful if a repository does not contain the .wercker file.
+Link a repository back up to an application on wercker. Useful if a repository does not contain the .wercker file.
 
 ### builds
 Shows a list of the most recent builds and the results.
