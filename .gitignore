@@ -4,3 +4,4 @@ npm-debug.log
 /public/styles/style.css
 /.sass-cache/
 /public/images/arrows-s3ecec5de52.png
+.wercker
