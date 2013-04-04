@@ -53,7 +53,7 @@ The `wercker.json` file helps you define any services you might need for your ap
     	}
 	}
 
-Commit and push this file to your git repository. You will now have access to several environment variables including:
+You will now have access to several environment variables including:
 
 	WERCKER_POSTGRESQL_HOST
 	WERCKER_POSTGRESQL_PORT
@@ -65,7 +65,17 @@ and the convenience url in the form of `postgres://postgres:wercker@10.0.3.223:5
 	
 	WERCKER_POSTGRESQL_URL
 
-Please note that if you have not 
+Commit and push this file to your git repository.
+
+## Setting up the wercker addon
+
+Wercker comes with a Heroku addon which you can find on the Heroku marketplace (currently still in beta so not visible yet). By running the following command you will add the wercker addon to your Heroku app that you've created in previous steps:
+
+	$ heroku addons:add wercker
+
+This will set up a wizard that will guide you through subsequent steps needed to deploy your application. You can open this wizard and dashboard by running:
+
+	$ heroku addons:open wercker
 
 ## Adding your application to wercker
 
@@ -79,4 +89,23 @@ Wercker comes with a command line interface (CLI) that will help you in setting 
 	 (1) git@github.com:wercker/rails-sample.git
 	Make your choice (1=default):
 
-This command will also trigger an initial build.
+This command will also trigger an initial build. If this build is green you are ready for deployment.
+
+## Deploy to Heroku
+
+You can now deploy your green build to Heroku. You can do so via the dashboard that you can invoke by running `heroku addons:open wercker` and hit deploy next to a green build or by executing the following command through the command line interface:
+
+	$ wercker deploy
+	
+	-----------------------
+	welcome to wercker-cli
+	-----------------------
+
+	Looking for login token...
+	Retreiving builds from wercker...
+	Found 1 result(s)...
+
+	┌───┬────────┬──────────┬────────┬──────────┬───────────────────┬──────────────────────┐
+	│   │ result │ progress │ branch │ hash     │ created           │ message              │
+	├───┼────────┼──────────┼────────┼──────────┼───────────────────┼──────────────────────┤
+	│ 1 │ passed │ 100.0%   │ master │ bf3fc264 │ 04/04/13 13:49:19 │ init                 │
