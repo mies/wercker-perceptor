@@ -3,6 +3,7 @@ wercker
 last updated: 24 March 2013
 ----
 
+- How does it work?
 - Requirements
 - Provisioning the add-on
 - Local Setup
