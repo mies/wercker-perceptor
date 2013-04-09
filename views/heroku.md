@@ -1,4 +1,4 @@
-wercker
+Wercker Heroku add-on
 ====
 last updated: 24 March 2013
 ----
