@@ -10,8 +10,10 @@ You can find the code for this tutorial on [Github](https://github.com/mies/werc
 * Declare your gem dependencies using Bundlder
 * Create a spec folder and add a Spec Helper
 * Create a spec
-* Create a  Rakefile
+* Create a Rakefile
+* Create a wercker.json file
 * Initiate your Git repository and push your changes to Github
+* Deploying to Heroku
 
 ## Prerequisites
 * Basic knowledge on Ruby, Sinatra and have Ruby 1.9.3 installed alongside Rubygems, Bundler and Sinatra.
@@ -123,6 +125,23 @@ Finally we need to create a Rakefile to run the rspec test:
   RSpec::Core::RakeTask.new(:spec)
 ```
 
+## Create a wercker.json file
+
+For wercker to know how to run our tests we create a `wercker.json` file
+in our repository:
+
+** wercker.json **
+
+``` javascript
+    {
+      "custom steps" : {
+            "rake" : ["bundle exec rake"]
+        }
+    }
+```
+
+Don't forget to add this to your Git repository.
+
 ## Initiate your Git repository and push your changes to Github
 
 ```
@@ -130,3 +149,41 @@ Finally we need to create a Rakefile to run the rspec test:
   $ git commit -m 'init'
   $ git push origin master
 ```
+
+## Deploying to Heroku
+
+If you have a Heroku account you can now create an application and
+deploy it through wercker. If not, sign up at
+[http://heroku.com](http://heroku.com).
+
+```
+ $ heroku create
+```
+
+Now add the wercker add-on through the Heroku CLI:
+
+```
+ $ heroku addons:add wercker
+```
+
+The wercker add-on page can be invoked through the resources page on the
+Heroku dashboard or via the Heroku CLI:
+
+```
+ $ heroku addons:open wercker
+`
+
+You can now add your project to wercker via the [wercker command line
+interface](http://devcenter.wercker.com/articles/cli):
+
+```
+ $ wercker create
+```
+
+This will trigger a build. If all is well you can now deploy to Heroku,
+again via the CLI:
+
+```
+ $ wercker deploy
+```
+Happy coding!
