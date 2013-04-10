@@ -171,7 +171,7 @@ Heroku dashboard or via the Heroku CLI:
 
 ```
  $ heroku addons:open wercker
-`
+```
 
 You can now add your project to wercker via the [wercker command line
 interface](http://devcenter.wercker.com/articles/cli):
