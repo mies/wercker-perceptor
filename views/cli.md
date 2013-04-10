@@ -25,6 +25,7 @@ Depending on your operating systems you may have to run this with superuser priv
 	    wercker targets add
 	    wercker targets list
 	    wercker targets details
+      wercker update
 	    wercker --version
 	    wercker --help
 
